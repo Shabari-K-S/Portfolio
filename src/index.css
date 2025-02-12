@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+:root {
+  background-color: #111111 !important;
+}
+
+@utility paused {
+    animation-play-state: paused;
+}
+
+.prose * {
+  color: white !important;
+} 
