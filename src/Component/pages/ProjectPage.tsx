@@ -32,10 +32,10 @@ const ProjectPage = () => {
   return (
     <div className="w-full text-white">
       <Navbar />
-      <div className="text-white w-full max-w-3xl mx-auto">
-        <div className="p-4 md:p-5 flex flex-col gap-2">
+      <div className="text-white w-full md:max-w-4xl mx-auto">
+        <div className="p-4 md:p-7 flex flex-col gap-2">
           <div className="w-full h-[150px] bg-gradient-to-tr from-[#1E4664] via-[#1E9064] to-[#15BDD5] rounded-lg">
-            <div className="flex flex-col justify-end  h-full p-5">
+            <div className="flex flex-col justify-end h-full p-5">
               <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
                   {name}
               </h1>

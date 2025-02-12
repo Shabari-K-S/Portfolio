@@ -6,7 +6,7 @@ const AboutMe = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col justify-center px-[22%] space-y-10">
+      <div className="flex flex-col justify-center md:px-[22%] space-y-10 px-[7%]">
         <div className="flex flex-col gap-5 mt-10">
             <h2 className="text-4xl font-bold text-white">
                 About Me

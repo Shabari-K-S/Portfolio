@@ -38,7 +38,7 @@ const Projects = () => {
   return (
     <div className="text-white w-full">
         <Navbar />
-        <div className="flex flex-col justify-center  px-[20%] space-y-10"> 
+        <div className="flex flex-col justify-center px-[7%] md:px-[20%] space-y-10"> 
             <h2 className="text-4xl text-white font-bold mt-10">Projects</h2>
             <div className="flex flex-col gap-10 mb-10">
                 {
