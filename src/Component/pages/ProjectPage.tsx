@@ -14,6 +14,7 @@ const ProjectPage = () => {
 
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Project_List.map((project, _) => {
       if(project.id == params.id){
         setName(project.name);
@@ -22,7 +23,7 @@ const ProjectPage = () => {
         setData(project.data);
       }
     })
-  },[])  
+  },[params.id])  
 
   console.log(params.id);
 

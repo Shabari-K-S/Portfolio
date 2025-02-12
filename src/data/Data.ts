@@ -4,7 +4,7 @@ export type ProjectCardProps = {
     name: string;
     lang: string[];
     desc: string;
-    id: number;
+    id: string;
 }
 
 export type ProjectPageProps = {
@@ -18,7 +18,7 @@ export type ProjectPageProps = {
 
 export const Project_List = [
     {
-        id: 0,
+        id: "0",
         name: "JSW-OHC",
         lang: ["Python", "Streamlit"],
         desc: "The JSW-OHC Team Project is an initiative aimed at streamlining and optimizing the Occupational Health Center (OHC) management system for JSW (Jindal Steel Works). This project focuses on developing a digital solution to enhance medical record-keeping, employee health tracking, and operational efficiency within the OHC framework.",
@@ -69,7 +69,7 @@ export const Project_List = [
         `
     },        
     {
-        id: 1,
+        id: "1",
         name:"WebStorm",
         lang:["Python"],
         desc: "WebStorm is a lightweight, flexible web framework built using Python. It serves as a customizable HTTP server with easy-to-use features for building web applications. With its streamlined design, WebStorm enables developers to quickly set up a web server and integrate dynamic content, making it an ideal solution for small to medium-sized projects. The framework is available on GitHub for open-source collaboration, and its modular structure allows developers to extend and enhance its functionalities",
