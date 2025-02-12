@@ -11,16 +11,28 @@ const Hero = () => {
             <div className="flex justify-between gap-1">
                 <h1 className="text-4xl font-bold">Shabari K S</h1>
                 <div className="gap-5 flex flex-row items-center">
-                    <a className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl">
+                    <a 
+                        className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl"
+                        href="mailto:shabaricse2003@gmail.com"
+                        >
                         <MdOutlineMailOutline className="w-[22px] h-[22px]" />
                     </a>
-                    <a className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl">
+                    <a 
+                        className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl"
+                        href="https://app.hackthebox.com/profile/1104708"
+                        >
                         <SiHackthebox className="w-[22px] h-[22px]" />
                     </a>
-                    <a className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl">
+                    <a 
+                        className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl"
+                        href="https://github.com/Shabari-K-S"
+                    >
                         <FaGithub className="w-[22px] h-[22px]" />
                     </a>
-                    <a className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl">
+                    <a 
+                        className="border-2 border-[#27272a] p-1.5 rounded-md cursor-pointer hover:shadow-amber-50 hover:shadow-2xl"
+                        href="https://www.linkedin.com/in/shabari-k-s/"
+                        >
                         <FaLinkedin className="w-[22px] h-[22px]" />
                     </a>
                 </div>
