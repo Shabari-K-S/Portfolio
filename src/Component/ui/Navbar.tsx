@@ -6,8 +6,8 @@ const Navbar = () => {
 
   return (
     <div className="w-full h-[70px] text-white bg-[#111111] sticky">
-      <div className="px-6 md:px-28 py-6 flex flex-row w-full justify-between items-center">
-        <h2 className="text-2xl font-semibold">Shabari K S</h2>
+      <div className="px-6 md:px-10 lg:px-16 xl:px-20 py-6 flex flex-row w-full justify-between items-center">
+        <a className="text-2xl font-semibold cursor-pointer" href="/">Shabari K S</a>
         
         <div className="hidden md:flex flex-row gap-5">
           <a href="/" className="hover:text-gray-400">Home</a>

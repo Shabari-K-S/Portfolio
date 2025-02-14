@@ -3,6 +3,7 @@ import { Project_List } from "../../data/Data";
 import { useEffect, useState } from "react";
 import MarkdownViewer from "../ui/MarkdownViewer";
 import Navbar from "../ui/Navbar";
+import Footer from "../ui/Footer";
 
 const ProjectPage = () => {
 
@@ -56,6 +57,8 @@ const ProjectPage = () => {
           <MarkdownViewer markdown={data} />
         </div>
       </div>
+      <div className="w-full border border-gray-700/40"></div>
+      <Footer />
     </div>
   )
 }

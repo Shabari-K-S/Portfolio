@@ -1,5 +1,6 @@
 import Navbar from "../ui/Navbar"
 import { Project_List, ProjectCardProps } from "../../data/Data"
+import Footer from "../ui/Footer"
 
 export const ProjectCard = ( { id, name, lang, desc}: ProjectCardProps ) => {
 
@@ -48,6 +49,10 @@ const Projects = () => {
                 }
             </div>
         </div>
+        <div className="flex flex-col items-center w-full justify-center mt-5 gap-5">
+            <div className="min-w-3xl h-0.5 mt-5 bg-[#222222]"></div>
+            <Footer />
+      </div>
     </div>
   )
 }
