@@ -51,24 +51,28 @@ const Contacts = () => {
             <a
               className="p-1.5 rounded-md cursor-pointer hover:scale-[110%] hover:translate-x-[8%] hover:text-white flex items-center gap-3 transition w-fit duration-300 ease-in-out"
               href="mailto:shabaricse2003@gmail.com"
+              target="_blank"
             >
               <MdOutlineMailOutline className="w-[22px] h-[22px]" /> shabaricse2003@gmail.com
             </a>
             <a
               className="p-1.5 rounded-md cursor-pointer hover:scale-[110%] hover:translate-x-[8%] hover:text-white flex items-center gap-3 transition w-fit duration-300 ease-in-out"
               href="https://app.hackthebox.com/profile/1104708"
+              target="_blank"
             >
               <SiHackthebox className="w-[22px] h-[22px]" /> Shabari
             </a>
             <a
               className="p-1.5 rounded-md cursor-pointer hover:scale-[110%] hover:translate-x-[8%] hover:text-white flex items-center gap-3 transition w-fit duration-300 ease-in-out"
               href="https://github.com/Shabari-K-S"
+              target="_blank"
             >
               <FaGithub className="w-[22px] h-[22px]" /> Shabari-K-S
             </a>
             <a
               className="p-1.5 rounded-md cursor-pointer hover:scale-[110%] hover:translate-x-[8%] hover:text-white flex items-center gap-3 transition w-fit duration-300 ease-in-out"
               href="https://www.linkedin.com/in/shabari-k-s/"
+              target="_blank"
             >
               <FaLinkedin className="w-[22px] h-[22px]" /> Shabari K S
             </a>
