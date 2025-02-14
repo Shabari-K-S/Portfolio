@@ -13,3 +13,15 @@
 .prose * {
   color: white !important;
 } 
+
+.toastify-success {
+  background-color: #111111 !important;
+  color: white;
+  border: 2px solid #222222;
+}
+
+.toastify-error {
+  background-color: #111111 !important;
+  color: white;
+  border: 2px solid #222222;
+}

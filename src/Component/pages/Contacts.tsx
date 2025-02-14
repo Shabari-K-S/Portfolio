@@ -3,35 +3,62 @@ import Navbar from "../ui/Navbar";
 import { MdOutlineMailOutline } from "react-icons/md";
 import Footer from "../ui/Footer";
 import { FaLinkedin } from "react-icons/fa6";
+import { ToastContainer, toast } from 'react-toastify';
+import { FaCheck } from "react-icons/fa6";
+import { MdError } from "react-icons/md";
 
 const Contacts = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState(false);
+  const success = () => toast.success(
+    "Message sent successfully",{
+      autoClose:3000,
+      hideProgressBar:true,
+      className:"toastify-success",
+      position:"bottom-right",
+      icon: <FaCheck />
+    }
+  )
+
+  const error = () => toast.error(
+    "Error sending message",{
+      autoClose:3000,
+      hideProgressBar:true,
+      className:"toastify-error",
+      position:"bottom-right",
+      icon: <MdError />
+    }
+  )
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        access_key: "bb433b2d-903e-4d77-ba5c-43ad07cd4ec9",
-        name,
-        email,
-        message,
-      }),
-    });
-
-    if (response.ok) {
-      setSuccess(true);
-      setName("");
-      setEmail("");
-      setMessage("");
-    } else {
-      console.error("Error submitting form:", response.status);
+    try{
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "bb433b2d-903e-4d77-ba5c-43ad07cd4ec9",
+          name,
+          email,
+          message,
+        }),
+      });
+  
+      if (response.ok) {
+        setName("");
+        setEmail("");
+        setMessage("");
+        success();
+      } else {
+        console.error("Error submitting form:", response.status);
+        error();
+      }
+    } catch (e) {
+      error();
+      console.log("Error:" , e)
     }
   };
 
@@ -110,17 +137,16 @@ const Contacts = () => {
           >
             Submit Form
           </button>
-          {success && (
-            <p className="text-green-400 mt-3 text-center">Form submitted successfully!</p>
-          )}
         </form>
       </div>
       <div className="flex flex-col items-center w-full justify-center mt-5 gap-5">
         <div className="min-w-3xl h-0.5 mt-5 bg-[#222222]"></div>
           <Footer />
       </div>
+      <ToastContainer />
     </>
   );
 };
+
 
 export default Contacts;
