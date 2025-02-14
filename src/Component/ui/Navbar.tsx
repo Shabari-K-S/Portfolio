@@ -36,7 +36,7 @@ const Navbar = () => {
           <a href="/projects" className="hover:text-gray-400 py-4 px-3 focus:border-b focus:border-[#e3e3e3] w-[80%] h-auto">Projects</a>
           <a href="/contact" className="hover:text-gray-400 py-4 px-3 focus:border-b focus:border-[#e3e3e3] w-[80%] h-auto">Contact Me</a>
           <a
-            className="p-2 rounded cursor-pointer bg-[#27272a] hover:bg-[#ededed] hover:text-zinc-800 transition ease-in-out duration-300 font-semibold"
+            className="p-2 w-[80%] text-center rounded cursor-pointer bg-[#27272a] hover:bg-[#ededed] hover:text-zinc-800 transition ease-in-out duration-300 font-semibold"
             href="https://shabari-portfolio.onrender.com/"
             target="_blank"
           >
