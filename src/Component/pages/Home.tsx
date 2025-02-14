@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col justify-center md:px-[20%] space-y-10 px-[7%]">  
+      <div className="flex flex-col justify-center lg:px-[20%] space-y-10 px-[7%]">  
         <Hero />
         <Skills />
         <Experience />
