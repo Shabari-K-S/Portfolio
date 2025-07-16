@@ -1,13 +1,15 @@
 import { Project_List } from "../../data/Data"
 import { ProjectCard } from "../pages/Projects"
 
-const ProjectList = () => {
+const ProjectList = ({ count }: { count?: number }) => {
+  const data = count ? Project_List.slice(0, count) : Project_List;
+
   return (
     <div>
         <h1 className="text-4xl font-bold text-white mb-2">My Projects</h1>
-        <div className="flex flex-col gap-10 mt-10 mb-10">
+        <div className="flex gap-10 mt-10 mb-10">
         {
-            Project_List.map((project, index) => (
+            data.map((project, index) => (
                 <ProjectCard key={index} name={project.name} lang={project.lang} desc={project.desc} id={project.id} />
             ))
         }

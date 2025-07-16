@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../ui/Navbar";
 import { MdOutlineMailOutline } from "react-icons/md";
 import Footer from "../ui/Footer";
@@ -65,25 +65,24 @@ const Contacts = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col md:flex-row justify-center mt-24">
-        <div className="w-full md:w-1/2 px-10 md:pr-16 lg:p-24 md:pl-5  text-white flex flex-col gap-5">
-          <h2 className="text-4xl font-bold">
-            Contact Me
-          </h2>
-          <p className="text-zinc-100/90 text-xl">
-            Feel free to use the form or drop us an email. Old-fashioned phone calls work too.
+      <div className="flex flex-col md:flex-row justify-center mt-24 text-[#e4e4e7] bg-[#0f0f11]">
+        <div className="w-full md:w-1/2 px-10 md:pr-16 lg:p-24 md:pl-5 flex flex-col gap-5">
+          <h2 className="text-4xl font-bold text-[#fafafa]">Contact Me</h2>
+          <p className="text-zinc-400 text-lg">
+            Feel free to use the form or drop me an email. Old-fashioned phone calls work too.
           </p>
+
           <div className="flex flex-col gap-5 text-zinc-400">
             <a
-              className="p-1.5 rounded-md cursor-pointer hover:scale-[110%] hover:translate-x-[8%] hover:text-white flex items-center gap-3 transition w-fit duration-300 ease-in-out"
+              className="p-2 rounded-md cursor-pointer hover:translate-x-2 hover:text-blue-400 transition-all flex items-center gap-3 w-fit"
               href="mailto:shabaricse2003@gmail.com"
               target="_blank"
             >
               <MdOutlineMailOutline className="w-[22px] h-[22px]" /> shabaricse2003@gmail.com
             </a>
-            
+
             <a
-              className="p-1.5 rounded-md cursor-pointer hover:scale-[110%] hover:translate-x-[8%] hover:text-white flex items-center gap-3 transition w-fit duration-300 ease-in-out"
+              className="p-2 rounded-md cursor-pointer hover:translate-x-2 hover:text-blue-400 transition-all flex items-center gap-3 w-fit"
               href="https://www.linkedin.com/in/shabari-k-s/"
               target="_blank"
             >
@@ -91,12 +90,13 @@ const Contacts = () => {
             </a>
           </div>
         </div>
+
         <form
           onSubmit={handleSubmit}
-          className="md:w-1/2 lg:w-1/3 w-full px-10 py-10 flex flex-col rounded-xl shadow-lg  text-white gap-5"
+          className="md:w-1/2 lg:w-1/3 w-full px-10 py-10 flex flex-col rounded-xl bg-[#1a1a1d] border border-[#2c2c2e] shadow-xl text-white gap-6"
         >
-          <div className="flex flex-col justify-center items-start gap-2">
-            <label htmlFor="name">Name</label>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="name" className="text-sm text-zinc-300">Name</label>
             <input
               type="text"
               name="name"
@@ -104,11 +104,12 @@ const Contacts = () => {
               onChange={(event) => setName(event.target.value)}
               placeholder="Enter your name"
               required
-              className="w-full p-2 mb-4 rounded border border-[#27272a] focus:outline-none focus:border-slate-400"
+              className="w-full p-3 rounded-md border border-[#2a2a2d] bg-[#0f0f11] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="flex flex-col justify-center items-start gap-2">
-            <label htmlFor="email">Email</label>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-sm text-zinc-300">Email</label>
             <input
               type="email"
               name="email"
@@ -116,29 +117,32 @@ const Contacts = () => {
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Your Email"
               required
-              className="w-full p-2 mb-4 rounded border border-[#27272a] focus:outline-none focus:border-slate-400"
+              className="w-full p-3 rounded-md border border-[#2a2a2d] bg-[#0f0f11] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="flex flex-col justify-center items-start gap-2">
-            <label htmlFor="message">Message</label>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="message" className="text-sm text-zinc-300">Message</label>
             <textarea
               name="message"
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               placeholder="Your Message"
               required
-              rows={4}
-              className="w-full p-2 rounded border border-[#27272a] focus:outline-none focus:border-slate-400"
+              rows={5}
+              className="w-full p-3 rounded-md border border-[#2a2a2d] bg-[#0f0f11] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
+
           <button
             type="submit"
-            className="w-full p-2 rounded bg-[#27272a] hover:bg-[#ededed] hover:text-zinc-800 transition ease-in-out duration-300 font-semibold"
+            className="mt-2 w-full py-3 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
           >
             Submit Form
           </button>
         </form>
       </div>
+
       <div className="flex flex-col items-center w-full justify-center mt-5 gap-5">
         <div className="min-w-3xl h-0.5 mt-5 bg-[#222222]"></div>
           <Footer />

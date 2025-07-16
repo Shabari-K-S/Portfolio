@@ -5,46 +5,55 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full h-[70px] text-white bg-[#111111] sticky">
-      <div className="px-6 md:px-10 lg:px-16 xl:px-20 py-6 flex flex-row w-full justify-between items-center">
-        <a className="text-2xl font-semibold cursor-pointer" href="/">Shabari K S</a>
-        
-        <div className="hidden md:flex flex-row gap-5">
-          <a href="/" className="hover:text-gray-400">Home</a>
-          <a href="/about" className="hover:text-gray-400">About</a>
-          <a href="/projects" className="hover:text-gray-400">Projects</a>
-          <a href="/contact" className="hover:text-gray-400">Contact Me</a>
+    <header className="sticky top-0 z-50 w-full bg-[#0f0f11] backdrop-blur-md shadow-md">
+      <nav className="flex items-center justify-between px-6 md:px-10 lg:px-16 xl:px-20 h-[70px] text-white">
+        {/* Logo */}
+        <a className="text-2xl font-bold tracking-tight hover:text-blue-400 transition" href="/">
+          Shabari K S
+        </a>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="/" className="hover:text-blue-400 transition">Home</a>
+          <a href="/about" className="hover:text-blue-400 transition">About</a>
+          <a href="/projects" className="hover:text-blue-400 transition">Projects</a>
+          <a href="/contact" className="hover:text-blue-400 transition">Contact Me</a>
         </div>
-        
+
+        {/* Old Portfolio Button */}
         <a
-          className="hidden md:block p-2 rounded cursor-pointer bg-[#27272a] hover:bg-[#ededed] hover:text-zinc-800 transition ease-in-out duration-300 font-semibold"
           href="https://shabari-portfolio.onrender.com/"
           target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-block bg-zinc-800 text-white px-4 py-1.5 rounded-md hover:bg-white hover:text-zinc-900 transition font-semibold text-sm"
         >
           Old Portfolio
         </a>
 
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        {/* Mobile Hamburger */}
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
           <Menu size={24} />
         </button>
-      </div>
-      
+      </nav>
+
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center gap-3 bg-[#111111] py-4">
-          <a href="/" className="hover:text-gray-400 py-4 px-3 focus:border-b focus:border-[#e3e3e3] w-[80%] h-auto">Home</a>
-          <a href="/about" className="hover:text-gray-400 py-4 px-3 focus:border-b focus:border-[#e3e3e3] w-[80%] h-auto">About</a>
-          <a href="/projects" className="hover:text-gray-400 py-4 px-3 focus:border-b focus:border-[#e3e3e3] w-[80%] h-auto">Projects</a>
-          <a href="/contact" className="hover:text-gray-400 py-4 px-3 focus:border-b focus:border-[#e3e3e3] w-[80%] h-auto">Contact Me</a>
+        <div className="flex flex-col md:hidden px-6 py-4 gap-4 bg-black text-white text-sm font-medium shadow-inner">
+          <a href="/" className="hover:text-blue-400 transition">Home</a>
+          <a href="/about" className="hover:text-blue-400 transition">About</a>
+          <a href="/projects" className="hover:text-blue-400 transition">Projects</a>
+          <a href="/contact" className="hover:text-blue-400 transition">Contact Me</a>
           <a
-            className="p-2 w-[80%] text-center rounded cursor-pointer bg-[#27272a] hover:bg-[#ededed] hover:text-zinc-800 transition ease-in-out duration-300 font-semibold"
             href="https://shabari-portfolio.onrender.com/"
             target="_blank"
+            rel="noopener noreferrer"
+            className="bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-white hover:text-zinc-900 transition font-semibold text-center"
           >
             Old Portfolio
           </a>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 

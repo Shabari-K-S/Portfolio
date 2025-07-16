@@ -7,16 +7,19 @@ import Footer from "../ui/Footer"
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-[#0f0f11] text-white min-h-screen">
       <Navbar />
-      <div className="flex flex-col justify-center lg:px-[20%] space-y-10 px-[7%]">  
+      
+      <main className="flex flex-col justify-center px-[7%] lg:px-[20%] space-y-14 mt-6">
         <Hero />
         <Skills />
         <Experience />
-        <ProjectList />
-        <div className="w-full border border-gray-700/40"></div>
-        <Footer />
-      </div>
+        <ProjectList count={3} />
+      </main>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-[#2e2e2e] to-transparent my-10" />
+      
+      <Footer />
     </div>
   )
 }

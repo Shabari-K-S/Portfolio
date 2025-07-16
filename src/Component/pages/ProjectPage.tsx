@@ -31,35 +31,39 @@ const ProjectPage = () => {
 
 
   return (
-    <div className="w-full text-white">
+    <div className="w-full text-white bg-[#0f0f11] min-h-screen">
       <Navbar />
-      <div className="text-white w-full md:max-w-4xl mx-auto">
-        <div className="p-4 md:p-7 flex flex-col gap-2">
-          <div className="w-full h-[150px] bg-gradient-to-tr from-[#1E4664] via-[#1E9064] to-[#15BDD5] rounded-lg">
-            <div className="flex flex-col justify-end h-full p-5">
-              <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
-                  {name}
-              </h1>
-              <div>
-                  {
-                      lang.map((prog, index) => (
-                          <span key={index} className="inline-block bg-gray-200 rounded-md border-2 border-gray-500 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 dark:bg-gray-700 dark:text-gray-200">{prog}</span>
-                      ))
-                  }
-              </div>
-            </div>
+      <div className="w-full max-w-4xl mx-auto px-5 md:px-8 mt-20">
+        <div className="w-full rounded-xl bg-gradient-to-br from-[#434fd0] via-[#213da9] to-[#02026b] border border-[#3a3a3d] pt-12 px-4 pb-2 shadow-xl backdrop-blur-md">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-sm mb-3">
+            {name}
+          </h1>
+          <div className="flex flex-wrap gap-2">
+            {lang.map((prog, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-sm font-medium text-blue-300 bg-blue-900/20 border border-blue-500/30 rounded-md dark:bg-neutral-800"
+              >
+                {prog}
+              </span>
+            ))}
           </div>
-          
-          
-          <p className="mt-2 text-justify">
-              {desc}
-          </p>
+        </div>
+
+
+        <div className="mt-6 text-gray-300 text-justify leading-relaxed text-base sm:text-lg">
+          {desc}
+        </div>
+
+        <div className="mt-6 w-full">
           <MarkdownViewer markdown={data} />
         </div>
       </div>
-      <div className="w-full border border-gray-700/40"></div>
+
+      <div className="w-full border-t border-zinc-800 mt-10" />
       <Footer />
     </div>
+
   )
 }
 
