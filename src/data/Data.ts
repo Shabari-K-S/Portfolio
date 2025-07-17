@@ -87,9 +87,6 @@ export const Project_List = [
         desc:"This API takes a URL as input and returns the web page’s title, a clean summary, the full extracted text, and all image URLs. It fetches the page, parses the HTML, extracts readable content, and generates a concise summary—all in one simple POST request. Perfect for building content readers, research tools, or AI-powered summarizers",
         data:`
 
->  to use this api [Click this](https://rapidapi.com/shabaricse2003/api/web-scrapper-api1) 
-
-
 ## 📖 Overview
 
 The **Web Content Parser API** is a simple and powerful REST API designed to extract meaningful information from any public webpage. It processes a given URL and returns structured content including the **title**, **main article text**, a **brief summary**, and a list of all **image URLs** found on the page.
@@ -145,7 +142,6 @@ This API is deployed on RapidAPI for easy access. You can integrate it into any 
         desc: "Geo Insight API is a powerful tool for developers to access geographical data and insights. It provides endpoints for retrieving information about countries, cities, and regions, including population statistics, area sizes, and more. The API is designed to be fast, reliable, and easy to integrate into various applications.",
         data: `
         
-> to use this api [Click this](https://rapidapi.com/shabaricse2003/api/geoinsight-api)
 
 **GeoInsight API** is a powerful IP geolocation and network intelligence service. Built using FastAPI and MaxMind's GeoLite2 database, it provides rich details about any public IPv4 or IPv6 address.
 
@@ -293,18 +289,6 @@ Form:
 * Payment and business cards
 * Logistics & inventory tracking
 * Internal tools and automation
-
----
-
-## Plan Structure Review
-
-| Plan      | Monthly Price         | Requests/Month | Overage                  |
-| --------- | --------------------- | -------------- | ------------------------ |
-| **Basic** | \`$0\`                  | \`100\`          | N/A                      |
-| **Pro**   | \`$5\`                  | \`1,000\`        | $0.50 per extra request |
-| **Ultra** | \`$25\` *(Recommended)* | \`10,000\`       | $0.10 per extra         |
-| **Mega**  | \`$50\`                 | \`100,000\`      | $0.05 per extra         |
-
         `
     },
     {
@@ -313,51 +297,51 @@ Form:
         lang: ["Python", "FastAPI"],
         desc: "Generate cryptographically secure passwords, API keys, and random tokens with full customization. Built for developers needing high-entropy values for login systems, authentication flows, or secure storage.",
         data: `
-        ## 🔐 Overview
+## 🔐 Overview
 
-        This API lets you generate **cryptographically secure random strings** ideal for passwords, tokens, and keys. Customize length, characters, and output formats.
+This API lets you generate **cryptographically secure random strings** ideal for passwords, tokens, and keys. Customize length, characters, and output formats.
 
-        ---
+---
 
-        ## ✨ Features
+## ✨ Features
 
-        * 🔒 Secure by default — uses Python's \`secrets\` module
-        * 🧩 Character selection — include/exclude symbols, digits, letters
-        * 🧪 Random tokens, passwords, or API keys
-        * 🎛️ Adjustable length and character pool
-        * ⚙️ Stateless and FastAPI-powered
+* 🔒 Secure by default — uses Python's \`secrets\` module
+* 🧩 Character selection — include/exclude symbols, digits, letters
+* 🧪 Random tokens, passwords, or API keys
+* 🎛️ Adjustable length and character pool
+* ⚙️ Stateless and FastAPI-powered
 
-        ---
+---
 
-        ## 🛠️ Use Cases
+## 🛠️ Use Cases
 
-        * Password generation for user onboarding
-        * API token issuance for apps
-        * Invite codes, license keys
-        * Secure OTP & session keys
+* Password generation for user onboarding
+* API token issuance for apps
+* Invite codes, license keys
+* Secure OTP & session keys
 
-        ---
+---
 
-        ## 🔗 Endpoint
+## 🔗 Endpoint
 
-        **POST** \`/generate\`
+**POST** \`/generate\`
 
-        Input:
-        \`\`\`json
-        {
-        "length": 16,
-        "include_uppercase": true,
-        "include_digits": true,
-        "include_symbols": false
-        }
-        \`\`\`
+Input:
+\`\`\`json
+{
+"length": 16,
+"include_uppercase": true,
+"include_digits": true,
+"include_symbols": false
+}
+\`\`\`
 
-        Output:
-        \`\`\`json
-        {
-        "password": "asD8keLqNMbPzvFy"
-        }
-        \`\`\`
+Output:
+\`\`\`json
+{
+"password": "asD8keLqNMbPzvFy"
+}
+\`\`\`
         `
     },
     {
@@ -366,46 +350,46 @@ Form:
         lang: ["Python", "FastAPI"],
         desc: "Generate realistic fake data for testing and prototyping. Quickly produce emails, names, UUIDs, IPs, numbers, dates, and more — ideal for automation, dummy data, and mock APIs.",
         data: `
-        ## Overview
+## Overview
 
-        This API helps developers **generate random fake data** for UI prototyping, backend seeding, and testing.
+This API helps developers **generate random fake data** for UI prototyping, backend seeding, and testing.
 
-        ---
+---
 
-        ## ✨ Features
+## ✨ Features
 
-        * 📧 Generate fake names, emails, IPs, UUIDs
-        * 🧪 Supports custom types like dates, booleans, hex, numbers
-        * 🔁 Generate bulk lists
-        * ⚡ High performance with FastAPI
+* 📧 Generate fake names, emails, IPs, UUIDs
+* 🧪 Supports custom types like dates, booleans, hex, numbers
+* 🔁 Generate bulk lists
+* ⚡ High performance with FastAPI
 
-        ---
+---
 
-        ## 🧰 Endpoints
+## 🧰 Endpoints
 
-        **POST** \`/generate\`
+**POST** \`/generate\`
 
-        Input:
-        \`\`\`json
-        {
-        "type": "email",
-        "count": 5
-        }
-        \`\`\`
+Input:
+\`\`\`json
+{
+"type": "email",
+"count": 5
+}
+\`\`\`
 
-        Output:
-        \`\`\`json
-        ["abc@mail.com", "user001@mail.net", ...]
-        \`\`\`
+Output:
+\`\`\`json
+["abc@mail.com", "user001@mail.net", ...]
+\`\`\`
 
-        ---
+---
 
-        ## Use Cases
+## Use Cases
 
-        * Backend testing
-        * Database mocking
-        * UI/UX demos
-        * Automation workflows
+* Backend testing
+* Database mocking
+* UI/UX demos
+* Automation workflows
         `
     },
     {
@@ -414,46 +398,46 @@ Form:
         lang: ["Python", "FastAPI"],
         desc: "A flexible API that generates cryptographic hash values from input text using multiple algorithms like MD5, SHA, BLAKE2, and SHAKE. Supports fixed and extendable output.",
         data: `
-        ## 🔐 Overview
+## 🔐 Overview
 
-        Generate secure hashes from text using a wide range of algorithms.
+Generate secure hashes from text using a wide range of algorithms.
 
-        ---
+---
 
-        ## ⚙️ Supported Algorithms
+## ⚙️ Supported Algorithms
 
-        * MD5, SHA1, SHA256, SHA512
-        * SHA3 (224, 256, 384, 512)
-        * BLAKE2b, BLAKE2s
-        * SHAKE-128, SHAKE-256
+* MD5, SHA1, SHA256, SHA512
+* SHA3 (224, 256, 384, 512)
+* BLAKE2b, BLAKE2s
+* SHAKE-128, SHAKE-256
 
-        ---
+---
 
-        ## 🧪 Example
+## 🧪 Example
 
-        Input:
-        \`\`\`json
-        {
-        "text": "hello world",
-        "algorithm": "sha256"
-        }
-        \`\`\`
+Input:
+\`\`\`json
+{
+"text": "hello world",
+"algorithm": "sha256"
+}
+\`\`\`
 
-        Output:
-        \`\`\`json
-        {
-        "hash": "a948904f2f0f479b8f8197694b30184b..."
-        }
-        \`\`\`
+Output:
+\`\`\`json
+{
+"hash": "a948904f2f0f479b8f8197694b30184b..."
+}
+\`\`\`
 
-        ---
+---
 
-        ## Use Cases
+## Use Cases
 
-        * Password hashing
-        * File integrity checks
-        * Digital signatures
-        * Data comparison and validation
+* Password hashing
+* File integrity checks
+* Digital signatures
+* Data comparison and validation
         `
     },
     {
@@ -462,44 +446,44 @@ Form:
         lang: ["Python", "FastAPI"],
         desc: "Evaluate how secure a password is using real-time heuristics and optional breach checks. Provides instant feedback with recommendations to strengthen weak passwords.",
         data: `
-        ## 🔍 Overview
+## 🔍 Overview
 
-        This API evaluates the **strength and quality** of a password using character diversity and length heuristics.
+This API evaluates the **strength and quality** of a password using character diversity and length heuristics.
 
-        ---
+---
 
-        ## 🔐 Key Metrics
+## 🔐 Key Metrics
 
-        * Entropy score
-        * Common pattern checks
-        * Optional data breach warning
-        * Suggestions to improve
+* Entropy score
+* Common pattern checks
+* Optional data breach warning
+* Suggestions to improve
 
-        ---
+---
 
-        ## 📥 Example
+## 📥 Example
 
-        Input:
-        \`\`\`json
-        { "password": "Shabari@123" }
-        \`\`\`
+Input:
+\`\`\`json
+{ "password": "Shabari@123" }
+\`\`\`
 
-        Output:
-        \`\`\`json
-        {
-        "score": 4,
-        "feedback": "Strong password",
-        "suggestions": []
-        }
-        \`\`\`
+Output:
+\`\`\`json
+{
+"score": 4,
+"feedback": "Strong password",
+"suggestions": []
+}
+\`\`\`
 
-        ---
+---
 
-        ## 🧠 Use Cases
+## 🧠 Use Cases
 
-        * Signup form validation
-        * Password manager tools
-        * Security checks in admin panels
+* Signup form validation
+* Password manager tools
+* Security checks in admin panels
         `
 
     }
