@@ -6,6 +6,7 @@ export type ProjectCardProps = {
     id: string;
     liveLink?: string;
     hideSource?: boolean;
+    github?: string;
 }
 
 export type ProjectPageProps = {
@@ -15,6 +16,7 @@ export type ProjectPageProps = {
     data: string;
     liveLink?: string;
     hideSource?: boolean;
+    github?: string;
 }
 
 export const Project_List = [
@@ -22,7 +24,8 @@ export const Project_List = [
         id: "codeflow",
         name: "CodeFlow",
         lang: ["TypeScript", "React", "Vite"],
-        liveLink: "https://codeflow-visualizer.vercel.app",
+        liveLink: "https://codeflow-app.vercel.app",
+        github: "https://github.com/Shabari-K-S/codeflow",
         desc: "A powerful, real-time code execution visualizer that transforms static code into dynamic, interactive flowcharts. Bridge the gap between reading code and understanding its execution.",
         data: `
 # CodeFlow 🌊
@@ -142,6 +145,7 @@ Contributions are welcome! If you'd like to improve the parser, add new language
         id: "terminon",
         name: "Terminon",
         lang: ["Rust", "Tauri", "React", "TypeScript"],
+        github: "https://github.com/Shabari-K-S/terminon",
         desc: "A modern, GPU-accelerated terminal emulator built with Rust (Tauri) and React. Designed to be lightweight, incredibly fast, and aesthetically pleasing with a 'Ghostty-style' translucent UI.",
         data: `
 # 🚀 Terminon (Tauri + React)
@@ -149,7 +153,7 @@ Contributions are welcome! If you'd like to improve the parser, add new language
 A modern, GPU-accelerated terminal emulator built with **Rust (Tauri)** and **React**.
 Designed to be lightweight, incredibly fast, and aesthetically pleasing with a "Ghostty-style" translucent UI.
 
-![Terminal Preview](./docs/preview.png)
+![Terminal Preview](https://raw.githubusercontent.com/Shabari-K-S/terminon/refs/heads/main/docs/preview.png)
 
 ## ✨ Features
 
@@ -258,6 +262,7 @@ Made by **[Shabari K S](https://github.com/Shabari-K-S)** 🚀
         id: "rsql",
         name: "RSQL",
         lang: ["Rust"],
+        github: "https://github.com/Shabari-K-S/rsql",
         desc: "A lightweight, disk-backed relational database management system (RDBMS) built in Rust. Implements a persistent B-Tree storage engine, SQL parser, and interactive REPL from the ground up.",
         data: `
 # RSQL: A SQLite Clone from Scratch in Rust
@@ -506,6 +511,7 @@ Build with ❤️ by Shabari.
         id: "trace",
         name: "Trace",
         lang: ["Go"],
+        github: "https://github.com/Shabari-K-S/trace",
         desc: "A developer tool that versions your local development environment at the project level. Stop 'environmental drift' by tracking project ports, local config, and dependencies.",
         data: `
 # Trace: Project-Level State Versioning (Phase 1 Complete)
@@ -616,6 +622,7 @@ go build -o trace
         id: "ryt-downloader",
         name: "RYT-Downloader",
         lang: ["Rust", "Tauri", "React", "TypeScript"],
+        github: "https://github.com/Shabari-K-S/ryt-downloader",
         desc: "A high-performance, desktop YouTube video downloader and manager built with Tauri v2. Native performance, real-time progress tracking, and a organized library.",
         data: `
 # RYT-Downloader (Rust YouTube Downloader)
@@ -708,6 +715,7 @@ The output (AppImage, .deb, .msi, or .dmg) will be located in:
         name: "JSW-OHC",
         lang: ["Python", "Streamlit"],
         hideSource: true,
+        // github: "", // Private project
         desc: "The JSW-OHC Team Project is an initiative aimed at slimming and organizing the Occupational Health Center (OHC) management system for JSW (Jindal Steel Works). This project focuses on developing a digital solution to enhance medical record-keeping, employee health tracking, and operational efficiency within the OHC framework.",
         data: `
 
@@ -759,6 +767,7 @@ The output (AppImage, .deb, .msi, or .dmg) will be located in:
         id: "webstrom-python",
         name: "WebStorm",
         lang: ["Python"],
+        github: "https://github.com/Shabari-K-S/webstrom-python",
         desc: "WebStorm is a lightweight, flexible web framework built using Python. It serves as a customizable HTTP server with easy-to-use features for building web applications. With its streamlined design, WebStorm enables developers to quickly set up a web server and integrate dynamic content, making it an ideal solution for small to medium-sized projects. The framework is available on GitHub for open-source collaboration, and its modular structure allows developers to extend and enhance its functionalities",
         data: `
 - 🌐 Easy-to-use HTTP server
@@ -772,6 +781,7 @@ The output (AppImage, .deb, .msi, or .dmg) will be located in:
         id: "web-scraper-api",
         name: "Web Scrapper API",
         lang: ["Python", "fastapi"],
+        github: "https://github.com/Shabari-K-S/web-scraper-api",
         desc: "This API takes a URL as input and returns the web page’s title, a clean summary, the full extracted text, and all image URLs. It fetches the page, parses the HTML, extracts readable content, and generates a concise summary—all in one simple POST request. Perfect for building content readers, research tools, or AI-powered summarizers",
         data: `
 
@@ -828,6 +838,7 @@ This API is deployed on RapidAPI for easy access. You can integrate it into any 
         name: "Geo Insight API",
         lang: ["Python", "fastapi"],
         desc: "Geo Insight API is a powerful tool for developers to access geographical data and insights. It provides endpoints for retrieving information about countries, cities, and regions, including population statistics, area sizes, and more. The API is designed to be fast, reliable, and easy to integrate into various applications.",
+        github: "https://github.com/Shabari-K-S/IP-Locator.git",
         data: `
         
 
@@ -928,6 +939,7 @@ If data is unavailable, \`"Unknown"\` or \`0\` is returned instead — making it
         name: "QR Pulse",
         lang: ["Python", "fastapi"],
         desc: "QR Pulse is a high-performance QR code generator and scanner API designed for developers who need fast, reliable, and flexible QR code solutions. With support for generating QR codes in PNG and Base64 formats, and powerful QR scanning from image URLs, base64 strings, or file uploads, QR Pulse is ideal for integrating into event ticketing systems, restaurant menus, digital business cards, payment platforms, and logistics tools. This lightweight REST API ensures seamless QR code creation and decoding in real time, making it perfect for websites, mobile apps, and automation workflows.",
+        github: "https://github.com/Shabari-K-S/QR-Pulse",
         data: `
 
 ## Overview
@@ -984,6 +996,7 @@ Form:
         name: "Secure Password Generator API",
         lang: ["Python", "FastAPI"],
         desc: "Generate cryptographically secure passwords, API keys, and random tokens with full customization. Built for developers needing high-entropy values for login systems, authentication flows, or secure storage.",
+        github: "https://github.com/Shabari-K-S/Password-Generator",
         data: `
 ## 🔐 Overview
 
@@ -1037,6 +1050,7 @@ Output:
         name: "Random Fake Data Generator",
         lang: ["Python", "FastAPI"],
         desc: "Generate realistic fake data for testing and prototyping. Quickly produce emails, names, UUIDs, IPs, numbers, dates, and more — ideal for automation, dummy data, and mock APIs.",
+        github: "https://github.com/Shabari-K-S/Random-Data-Generator-API",
         data: `
 ## Overview
 
@@ -1085,6 +1099,7 @@ Output:
         name: "Universal Hash Generator API",
         lang: ["Python", "FastAPI"],
         desc: "A flexible API that generates cryptographic hash values from input text using multiple algorithms like MD5, SHA, BLAKE2, and SHAKE. Supports fixed and extendable output.",
+        github: "https://github.com/Shabari-K-S/Hash-Generator-API",
         data: `
 ## 🔐 Overview
 
@@ -1133,6 +1148,7 @@ Output:
         name: "Password Strength Checker API",
         lang: ["Python", "FastAPI"],
         desc: "Evaluate how secure a password is using real-time heuristics and optional breach checks. Provides instant feedback with recommendations to strengthen weak passwords.",
+        github: "https://github.com/Shabari-K-S/Password-Strength-Checker-API",
         data: `
 ## 🔍 Overview
 

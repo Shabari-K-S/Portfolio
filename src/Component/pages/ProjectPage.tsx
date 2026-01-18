@@ -13,9 +13,11 @@ const ProjectPage = () => {
   const [lang, setLang] = useState([""]);
   const [desc, setDesc] = useState("");
   const [data, setData] = useState("");
-  const [projectId, setProjectId] = useState("");
+
   const [liveLink, setLiveLink] = useState("");
+
   const [hideSource, setHideSource] = useState(false);
+  const [github, setGithub] = useState("");
 
 
   useEffect(() => {
@@ -26,9 +28,11 @@ const ProjectPage = () => {
         setLang(project.lang);
         setDesc(project.desc);
         setData(project.data);
-        setProjectId(project.id);
+
         setLiveLink(project.liveLink || "");
+
         setHideSource(project.hideSource || false);
+        setGithub(project.github || "");
       }
     })
   }, [params.id])
@@ -90,8 +94,8 @@ const ProjectPage = () => {
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
               )}
-              {!hideSource && (
-                <a href={`https://github.com/shabari-k-s/${projectId}`} target="_blank" rel="noreferrer" className="flex items-center justify-center lg:justify-between p-3 md:p-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10 transition-all text-sm md:text-base">
+              {!hideSource && github && (
+                <a href={github} target="_blank" rel="noreferrer" className="flex items-center justify-center lg:justify-between p-3 md:p-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10 transition-all text-sm md:text-base">
                   <span>Source</span>
                   <Github className="w-4 h-4 ml-2" />
                 </a>

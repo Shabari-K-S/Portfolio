@@ -1,96 +1,90 @@
 import Navbar from "../ui/Navbar";
 import { Project_List, ProjectCardProps } from "../../data/Data";
 import Footer from "../ui/Footer";
+import { ArrowUpRight, Folder } from "lucide-react";
 
 // 🔷 Project Card Component
 export const ProjectCard = ({ id, name, lang, desc }: ProjectCardProps) => {
   return (
-    <div className="w-full rounded-xl border border-white/10 bg-gradient-to-br from-white/5 via-white/10 to-white/5 p-6 backdrop-blur-md shadow-md hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1">
-      <div className="flex flex-col gap-4">
-        {/* Title */}
-        <h3 className="text-2xl font-semibold text-white hover:text-blue-400 transition-colors">
-          {name}
-        </h3>
+    <a
+      href={`/projects/${id}`}
+      className="group flex flex-col h-full bg-[#18181b] border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10"
+    >
+      <div className="p-6 md:p-8 flex flex-col flex-1 gap-6">
 
-        {/* Tech Stack Badges */}
-        <div className="flex flex-wrap gap-2">
-          {lang.map((prog, index) => (
+        {/* Header */}
+        <div className="flex justify-between items-start">
+          <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:bg-blue-500/10 group-hover:border-blue-500/20 group-hover:text-blue-400 transition-colors">
+            <Folder className="w-6 h-6" />
+          </div>
+          <ArrowUpRight className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col gap-3">
+          <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+            {name}
+          </h3>
+          <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+            {desc}
+          </p>
+        </div>
+
+        {/* Footer / Tags */}
+        <div className="mt-auto pt-4 flex flex-wrap gap-2">
+          {lang.slice(0, 3).map((prog, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-sm font-medium text-blue-300 bg-blue-900/20 border border-blue-500/30 rounded-md dark:bg-neutral-800"
+              className="px-2.5 py-1 text-xs font-medium text-gray-400 bg-white/5 border border-white/5 rounded-md"
             >
               {prog}
             </span>
           ))}
+          {lang.length > 3 && (
+            <span className="px-2.5 py-1 text-xs font-medium text-gray-500">
+              +{lang.length - 3}
+            </span>
+          )}
         </div>
-
-        {/* Description */}
-        <p className="text-neutral-300 leading-relaxed text-sm line-clamp-4">
-          {desc}
-        </p>
-
-        {/* Project Link */}
-        <a
-          href={`/projects/${id}`}
-          className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-blue-300 hover:underline transition"
-        >
-          Project Link
-          <svg
-            className="w-4 h-4 transition-transform group-hover:translate-x-1"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
       </div>
-    </div>
+    </a>
   );
 };
 
 // 🔶 Projects Page Component
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-[#0f0f11] text-white w-full flex flex-col">
+    <div className="min-h-screen bg-[#0f0f11] text-white w-full flex flex-col selection:bg-blue-500/30">
       <Navbar />
 
-      <main className="w-full px-6 md:px-20 max-w-screen-xl mx-auto mt-14 flex flex-col gap-12">
-        <h2 className="text-4xl font-bold text-center md:text-left">🚀 Projects</h2>
+      <main className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-20">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-10 mt-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/5 pb-8">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+              Projects
+            </h2>
+            <p className="text-gray-400 max-w-lg">
+              A collection of my work, ranging from web applications to backend APIs and developer tools.
+            </p>
+          </div>
+          <div className="text-sm text-gray-500 font-medium">
+            {Project_List.length} Projects Total
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Project_List.map((project) => (
-            <div key={project.id} className="bg-gradient-to-br from-[#1e1e22] via-[#151517] to-[#101012] border border-zinc-800 rounded-xl shadow-md p-5 transition duration-300 hover:scale-[1.02] hover:shadow-xl">
-              <h2 className="text-xl font-semibold text-white mb-3">{project.name}</h2>
-              <div className="flex flex-wrap gap-2 mb-3">
-                {project.lang.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2.5 py-1 rounded-full text-sm font-medium text-zinc-200 bg-[#0f0f0f] border border-zinc-700"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <p className="text-zinc-400 text-sm line-clamp-4 mb-4">{project.desc}</p>
-              <a
-                href={`/projects/${project.id}`}
-                className="text-blue-400 hover:underline text-sm"
-              >
-                Project Link →
-              </a>
-            </div>
+            <ProjectCard
+              key={project.id}
+              {...project}
+            />
           ))}
         </div>
 
       </main>
 
-      <footer className="w-full mt-16">
-        <div className="w-full h-px bg-gray-700/40 my-10" />
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 };
