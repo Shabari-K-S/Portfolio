@@ -1,39 +1,54 @@
+import { Briefcase } from "lucide-react";
 
 const Experience = () => {
-  return (    
-    <div>
-        <h1 className="text-4xl font-bold text-white mt-8 mb-4">Experience</h1>
-        <ol className="relative border-s border-gray-200 dark:border-gray-700">                  
-            <li className="mb-10 ms-4">
-                <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2023 - December 2023</time>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Streamlit Campus Ambassador </h3>
-                <p className="text-base font-normal text-gray-500 dark:text-gray-400">Promoted Streamlit within the student community by organizing workshops, hackathons, and hands-on sessions. Engaged with developers to showcase Streamlit's capabilities in building data-driven applications effortlessly. Provided mentorship, created content, and collaborated with peers to enhance adoption and awareness of Streamlit.</p>
-            </li>
-            <li className="mb-10 ms-4">
-                <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2023 - August 2024</time>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">JSW Steel OHC Project</h3>
-                <p className="text-base font-normal text-gray-500 dark:text-gray-400">Developed and maintained the Occupational Health Center (OHC) management system for JSW Steel. Designed a robust application to streamline health record management, appointment scheduling, and medical reporting. Implemented automation features to enhance efficiency and ensure compliance with industry standards.</p>
-                <a href="/projects/jsw-ohc-python" className="mt-4 inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
-                    Learn more 
-                    <svg className="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
-            </li>
-            <li className="mb-10 ms-4">
-                <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">??? 2024 - ??? 2025</time>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">AMI Training</h3>
-                <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Worked on low-level system programming projects involving BIOS-level interactions and UEFI Shell application development using the EDK2 framework in C. Built custom shell utilities that interact directly with hardware components like PCI devices, memory maps, and I/O ports. Gained hands-on experience working in a pre-boot environment, understanding UEFI protocols, and manipulating firmware interfaces.
-                </p>
-            </li>
-        </ol>
+    return (
+        <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-10 flex items-center gap-3">
+                <Briefcase className="w-6 h-6 text-gray-400" />
+                Experience
+            </h2>
 
-    </div>
-  )
+            <div className="relative border-l border-white/10 ml-3 md:ml-4 space-y-12 md:space-y-16">
+
+                {/* AMI */}
+                <div className="relative pl-8 md:pl-12 group">
+                    <div className="absolute -left-[5px] md:-left-[6px] top-2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-blue-500 ring-4 ring-[#0f0f11] group-hover:bg-blue-400 transition-colors"></div>
+                    <span className="text-xs md:text-sm text-gray-500 font-mono mb-2 block uppercase tracking-wider">Jan 2025 - Present</span>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1">Product Engineering Trainee</h3>
+                    <div className="text-blue-400 font-medium mb-4 text-sm md:text-base">American Megatrends Inc (AMI)</div>
+                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                        Working on low-level system programming projects involving BIOS-level interactions and UEFI Shell application development using the EDK2 framework. Building custom shell utilities for hardware interaction (PCI devices, memory maps, I/O ports) and gaining deep insights into pre-boot environments and firmware interfaces.
+                    </p>
+                </div>
+
+                {/* JSW */}
+                <div className="relative pl-8 md:pl-12 group">
+                    <div className="absolute -left-[5px] md:-left-[6px] top-2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-gray-600 ring-4 ring-[#0f0f11] group-hover:bg-gray-500 transition-colors"></div>
+                    <span className="text-xs md:text-sm text-gray-500 font-mono mb-2 block uppercase tracking-wider">April 2023 - August 2024</span>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1">Full Stack Developer</h3>
+                    <div className="text-gray-300 font-medium mb-4 text-sm md:text-base">JSW Steel OHC Project</div>
+                    <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-4">
+                        Developed and maintained the Occupational Health Center (OHC) management system. Designed a robust application to streamline health record management, appointment scheduling, and medical reporting, ensuring compliance and operational efficiency.
+                    </p>
+                    <a href="/projects/jsw-ohc-python" className="inline-flex items-center text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">
+                        View Project -&gt;
+                    </a>
+                </div>
+
+                {/* Streamlit */}
+                <div className="relative pl-8 md:pl-12 group">
+                    <div className="absolute -left-[5px] md:-left-[6px] top-2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-gray-600 ring-4 ring-[#0f0f11] group-hover:bg-gray-500 transition-colors"></div>
+                    <span className="text-xs md:text-sm text-gray-500 font-mono mb-2 block uppercase tracking-wider">March 2023 - December 2023</span>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1">Streamlit Campus Ambassador</h3>
+                    <div className="text-gray-300 font-medium mb-4 text-sm md:text-base">Streamlit</div>
+                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                        Promoted Streamlit within the student community by organizing workshops, hackathons, and hands-on sessions. Mentored peers and created content to showcase Streamlit's capabilities in building data-driven applications.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    )
 }
 
 export default Experience
