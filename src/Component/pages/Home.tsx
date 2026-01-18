@@ -9,16 +9,14 @@ const Home = () => {
   return (
     <div className="bg-[#0f0f11] text-white min-h-screen">
       <Navbar />
-      
-      <main className="flex flex-col justify-center px-[7%] lg:px-[20%] space-y-14 mt-6">
+
+      <main className="max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-20 space-y-24">
         <Hero />
         <Skills />
         <Experience />
         <ProjectList count={3} />
       </main>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-[#2e2e2e] to-transparent my-10" />
-      
       <Footer />
     </div>
   )

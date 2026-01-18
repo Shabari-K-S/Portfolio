@@ -1,39 +1,38 @@
 import { useState } from "react";
 import Navbar from "../ui/Navbar";
-import { MdOutlineMailOutline } from "react-icons/md";
 import Footer from "../ui/Footer";
-import { FaLinkedin } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
-import { FaCheck } from "react-icons/fa6";
-import { MdError } from "react-icons/md";
+import { FaCheck, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { MdError, MdOutlineMailOutline } from "react-icons/md";
 
 const Contacts = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
   const success = () => toast.success(
-    "Message sent successfully",{
-      autoClose:3000,
-      hideProgressBar:true,
-      className:"toastify-success",
-      position:"bottom-right",
-      icon: <FaCheck />
-    }
-  )
+    "Message sent successfully", {
+    autoClose: 3000,
+    hideProgressBar: true,
+    className: "toastify-success",
+    position: "bottom-right",
+    icon: <FaCheck />
+  }
+  );
 
   const error = () => toast.error(
-    "Error sending message",{
-      autoClose:3000,
-      hideProgressBar:true,
-      className:"toastify-error",
-      position:"bottom-right",
-      icon: <MdError />
-    }
-  )
+    "Error sending message", {
+    autoClose: 3000,
+    hideProgressBar: true,
+    className: "toastify-error",
+    position: "bottom-right",
+    icon: <MdError />
+  }
+  );
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    try{
+    try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -46,7 +45,7 @@ const Contacts = () => {
           message,
         }),
       });
-  
+
       if (response.ok) {
         setName("");
         setEmail("");
@@ -58,99 +57,116 @@ const Contacts = () => {
       }
     } catch (e) {
       error();
-      console.log("Error:" , e)
+      console.log("Error:", e);
     }
   };
 
   return (
-    <>
+    <div className="bg-[#0f0f11] text-gray-200 min-h-screen">
       <Navbar />
-      <div className="flex flex-col md:flex-row justify-center mt-24 text-[#e4e4e7] bg-[#0f0f11]">
-        <div className="w-full md:w-1/2 px-10 md:pr-16 lg:p-24 md:pl-5 flex flex-col gap-5">
-          <h2 className="text-4xl font-bold text-[#fafafa]">Contact Me</h2>
-          <p className="text-zinc-400 text-lg">
-            Feel free to use the form or drop me an email. Old-fashioned phone calls work too.
+
+      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-32 pb-20">
+
+        {/* Header content */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            Get in Touch
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Have a project in mind or just want to chat? Feel free to drop a message or reach out on social media.
           </p>
 
-          <div className="flex flex-col gap-5 text-zinc-400">
-            <a
-              className="p-2 rounded-md cursor-pointer hover:translate-x-2 hover:text-blue-400 transition-all flex items-center gap-3 w-fit"
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            <ContactLink
               href="mailto:shabaricse2003@gmail.com"
-              target="_blank"
-            >
-              <MdOutlineMailOutline className="w-[22px] h-[22px]" /> shabaricse2003@gmail.com
-            </a>
-
-            <a
-              className="p-2 rounded-md cursor-pointer hover:translate-x-2 hover:text-blue-400 transition-all flex items-center gap-3 w-fit"
+              icon={<MdOutlineMailOutline />}
+              label="shabaricse2003@gmail.com"
+            />
+            <ContactLink
               href="https://www.linkedin.com/in/shabari-k-s/"
-              target="_blank"
-            >
-              <FaLinkedin className="w-[22px] h-[22px]" /> Shabari K S
-            </a>
+              icon={<FaLinkedin />}
+              label="LinkedIn"
+            />
+            <ContactLink
+              href="https://github.com/Shabari-K-S"
+              icon={<FaGithub />}
+              label="GitHub"
+            />
           </div>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="md:w-1/2 lg:w-1/3 w-full px-10 py-10 flex flex-col rounded-xl bg-[#1a1a1d] border border-[#2c2c2e] shadow-xl text-white gap-6"
-        >
-          <div className="flex flex-col gap-2">
-            <label htmlFor="name" className="text-sm text-zinc-300">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="Enter your name"
-              required
-              className="w-full p-3 rounded-md border border-[#2a2a2d] bg-[#0f0f11] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+        {/* Form */}
+        <div className="max-w-2xl mx-auto bg-[#1a1a1d]/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 md:p-10 shadow-2xl">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
-          <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="text-sm text-zinc-300">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="Your Email"
-              required
-              className="w-full p-3 rounded-md border border-[#2a2a2d] bg-[#0f0f11] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="text-sm font-medium text-gray-400">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="John Doe"
+                  required
+                  className="w-full p-3 rounded-lg bg-[#0f0f11] border border-white/10 text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-600"
+                />
+              </div>
 
-          <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-sm text-zinc-300">Message</label>
-            <textarea
-              name="message"
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-              placeholder="Your Message"
-              required
-              rows={5}
-              className="w-full p-3 rounded-md border border-[#2a2a2d] bg-[#0f0f11] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-sm font-medium text-gray-400">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="john@example.com"
+                  required
+                  className="w-full p-3 rounded-lg bg-[#0f0f11] border border-white/10 text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-600"
+                />
+              </div>
+            </div>
 
-          <button
-            type="submit"
-            className="mt-2 w-full py-3 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
-          >
-            Submit Form
-          </button>
-        </form>
-      </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="message" className="text-sm font-medium text-gray-400">Message</label>
+              <textarea
+                name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Tell me about your project..."
+                required
+                rows={5}
+                className="w-full p-3 rounded-lg bg-[#0f0f11] border border-white/10 text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-600 resize-none"
+              />
+            </div>
 
-      <div className="flex flex-col items-center w-full justify-center mt-5 gap-5">
-        <div className="min-w-3xl h-0.5 mt-5 bg-[#222222]"></div>
-          <Footer />
-      </div>
+            <button
+              type="submit"
+              className="mt-2 w-full py-3.5 rounded-lg bg-white text-black font-bold text-sm tracking-wide hover:bg-gray-200 transition-colors shadow-lg active:scale-[0.98]"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </main>
+
+      <Footer />
       <ToastContainer />
-    </>
+    </div>
   );
 };
 
+const ContactLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+  >
+    <span className="text-xl">{icon}</span>
+    <span className="text-sm font-medium">{label}</span>
+  </a>
+);
 
 export default Contacts;
