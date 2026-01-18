@@ -4,6 +4,8 @@ export type ProjectCardProps = {
     lang: string[];
     desc: string;
     id: string;
+    liveLink?: string;
+    hideSource?: boolean;
 }
 
 export type ProjectPageProps = {
@@ -11,16 +13,702 @@ export type ProjectPageProps = {
     lang: string[];
     desc: string;
     data: string;
+    liveLink?: string;
+    hideSource?: boolean;
 }
 
-
-
 export const Project_List = [
+    {
+        id: "codeflow",
+        name: "CodeFlow",
+        lang: ["TypeScript", "React", "Vite"],
+        liveLink: "https://codeflow-visualizer.vercel.app",
+        desc: "A powerful, real-time code execution visualizer that transforms static code into dynamic, interactive flowcharts. Bridge the gap between reading code and understanding its execution.",
+        data: `
+# CodeFlow 🌊
+
+> **See your code come to life.**
+> A powerful, real-time code execution visualizer that transforms static code into dynamic, interactive flowcharts.
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-7.0-646CFF?logo=vite&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+## 📖 Overview
+
+CodeFlow is a developer tool designed to bridge the gap between reading code and understanding its execution. By parsing standard JavaScript, TypeScript, and Python code, CodeFlow generates accurate, real-time flowcharts and visualizes the step-by-step execution state.
+
+Whether you are debugging complex logic, teaching algorithms, or simply exploring how code works under the hood, CodeFlow provides the visual context you need.
+
+## ✨ Key Features
+
+### 🔍 Deep Execution Visualization
+- **Line-by-Line & Expression Tracing**: Watch the instruction pointer move through your code in real-time, with granular step tracking for expressions and template literals.
+- **Variable Inspector**: Monitor the state of local and global variables, arrays, and objects as they mutate.
+- **Sandboxed Environment**: Safe execution with support for standard JavaScript built-ins like \`Array\`, \`Math\`, \`Object\`, \`Date\`, and more.
+- **Call Stack Tracking**: Visualize the stack frames pushing and popping during function calls and recursion.
+- **Execution Timeline**: Scrub back and forth through the execution history to pinpoint logic errors.
+
+### 🎨 Dynamic Flowcharts
+- **Auto-Generation**: Instantly converts your code into an SVG-based flowchart.
+- **Control Flow**: Explicitly visualizes loops (\`for\`, \`while\`, \`do-while\`), conditionals (\`if/else\`, \`switch\`), and exception handling (\`try/catch\`).
+- **Smart Layout**: Automatically arranges nodes for maximum readability.
+
+### 🛠️ Powerful Editor Environment
+- **Monaco Editor**: A fully-featured code editor (powered by VS Code's core) with syntax highlighting and IntelliSense.
+- **Multi-Language Support**:
+  - **JavaScript/TypeScript**: Powered by a custom AST parser and interpreter.
+  - **Python**: Powered by \`filbert\` for client-side Python execution.
+- **Responsive Layout**: Resizable panels for the Editor, Flowchart, and Inspector tools.
+
+## 🏗️ Technology Stack
+
+CodeFlow is built with a modern, performance-focused stack:
+
+- **Frontend Framework**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+- **Visualization**: [D3.js](https://d3js.org/) & SVGs
+- **Parsers**:
+  - \`@babel/parser\` for JS/TS AST generation.
+  - \`filbert\` for Python parsing.
+- **Animation**: [Framer Motion](https://www.framer.com/motion/) for smooth UI transitions.
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   \`\`\`bash
+   git clone https://github.com/Shabari-K-S/codeflow.git
+   cd codeflow
+   \`\`\`
+
+2. **Install dependencies**
+   \`\`\`bash
+   npm install
+   \`\`\`
+
+3. **Start the development server**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+
+4. **Open in Browser**
+   Visit \`http://localhost:5173\` to start attempting to visualize your code.
+
+## 📂 Project Structure
+
+\`\`\`
+src/
+├── components/          # React UI Components
+│   ├── Editor/          # Monaco Editor integration
+│   ├── FlowChart/       # D3.js based Flowchart renderer
+│   ├── ExecutionPanel/  # Playback controls (Play, Pause, Step)
+│   ├── VariablePanel/   # Variable state inspector
+│   └── ...
+├── core/                # Core Logic Engine
+│   ├── parser/          # AST Parsers (JS, Python)
+│   ├── interpreter/     # Custom code interpreter & state machine
+│   └── visualizer/      # Node/Edge generation logic
+├── stores/              # Global state (Zustand)
+├── hooks/               # Custom React hooks
+└── utils/               # Shared utilities
+\`\`\`
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve the parser, add new language support, or enhance the visualization engine:
+
+1. Fork the repository.
+2. Create your feature branch (\`git checkout -b feature/AmazingFeature\`).
+3. Commit your changes (\`git commit -m 'Add some AmazingFeature'\`).
+4. Push to the branch (\`git push origin feature/AmazingFeature\`).
+5. Open a Pull Request.
+
+---
+
+**Made with 💙 by Shabari K S**
+        `
+    },
+    {
+        id: "terminon",
+        name: "Terminon",
+        lang: ["Rust", "Tauri", "React", "TypeScript"],
+        desc: "A modern, GPU-accelerated terminal emulator built with Rust (Tauri) and React. Designed to be lightweight, incredibly fast, and aesthetically pleasing with a 'Ghostty-style' translucent UI.",
+        data: `
+# 🚀 Terminon (Tauri + React)
+
+A modern, GPU-accelerated terminal emulator built with **Rust (Tauri)** and **React**.
+Designed to be lightweight, incredibly fast, and aesthetically pleasing with a "Ghostty-style" translucent UI.
+
+![Terminal Preview](./docs/preview.png)
+
+## ✨ Features
+
+* **⚡ Blazing Fast:** Powered by Rust and \`portable-pty\` for the backend, with \`xterm.js\` WebGL rendering on the frontend.
+* **🎨 Modern UI:** Sleek, borderless design with a custom title bar and glassmorphism accents.
+* **🔀 Multi-Tab & Split Support:** Manage multiple sessions effortlessly.
+* **📁 Smart Profile Selector:** Dropdown to easily switch between **Bash**, **WSL**, **PowerShell**, or **CMD** based on your OS.
+* **🏠 Welcome Hub:** A premium landing page that appears when all tabs are closed, providing quick actions for new sessions.
+* **🏠 Global Theming:** Choose from popular presets (Dracula, Nord, etc.) that apply instantly to the entire application UI.
+* **🌐 SSH Profile Manager:** Complete CRUD operations for SSH profiles with live UI updates and persistence.
+* **📏 Responsive Tabs:** Chrome-like tab behavior with equal width distribution and graceful shrinking.
+* **⚙️ Dynamic Settings:** Manage appearance and profiles through a dedicated, live-updating Settings tab.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React 19, TypeScript, Vanilla CSS.
+* **Backend:** Rust, Tauri v2.
+* **Terminal Engine:** xterm.js + xterm-addon-fit + xterm-addon-web-links.
+* **Shell Interface:** portable-pty (async multi-threaded shell management).
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+1.  **Rust & Cargo:** \`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\`
+2.  **Node.js & npm:** v18 or higher.
+3.  **System Dependencies:**
+    * *Linux:* \`libwebkit2gtk-4.0-dev\`, \`build-essential\`, \`libssl-dev\`, \`libgtk-3-dev\`, \`libayatana-appindicator3-dev\`.
+    * *Windows/Mac:* No extra steps usually needed.
+
+### Installation
+
+1.  **Clone the repository:**
+    \`\`\`bash
+    git clone https://github.com/Shabari-K-S/terminon.git
+    cd terminon
+    \`\`\`
+
+2.  **Install Frontend Dependencies:**
+    \`\`\`bash
+    npm install
+    \`\`\`
+
+3.  **Run in Development Mode:**
+    This starts the React server and the Rust backend simultaneously.
+    \`\`\`bash
+    npm run tauri dev
+    \`\`\`
+
+---
+
+## 📖 Usage Guide
+
+### 1. Profiles & New Tabs
+* Click the **\`+\`** button to open a default terminal tab.
+* Click the **Chevron (⌄)** next to it to select a specific profile (e.g., WSL, Bash) or connect via SSH.
+* The app automatically detects your OS and offers relevant shells.
+
+### 2. Settings & Themes
+* Click the **Gear Icon** in the title bar to open the **Settings Tab**.
+* Switch between themes (Campbell, Dracula, Catppuccin, etc.) and they will apply instantly across the whole app.
+* Manage your SSH profiles with full CRUD support.
+
+### 3. Font Issues?
+If you see "boxes" instead of icons in your prompt:
+* The app comes bundled with **JetBrains Mono Nerd Font**.
+* Ensure the file exists in \`src/assets/fonts/\`.
+* If developing on Linux, you may need to install the font system-wide if the CSS bundling fails: \`sudo pacman -S ttf-jetbrains-mono-nerd\`.
+
+---
+
+## 🔧 Configuration
+
+All configurations, including themes and SSH profiles, are now managed directly through the **Settings** UI and persisted automatically via Tauri's store plugin. No manual CSS or terminal code changes are required for styling.
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+
+1. Fork the repo.
+2. Create your feature branch (\`git checkout -b feature/AmazingFeature\`).
+3. Commit your changes (\`git commit -m 'Add some AmazingFeature'\`).
+4. Push to the branch (\`git push origin feature/AmazingFeature\`).
+5. Open a Pull Request.
+
+---
+
+## ❤️ Credits
+
+Built with **love** and:
+* [![Tauri](https://img.shields.io/badge/Tauri-FFC131?style=flat-square&logo=tauri&logoColor=black)](https://tauri.app)
+* [![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev)
+* [![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+
+Made by **[Shabari K S](https://github.com/Shabari-K-S)** 🚀
+        `
+    },
+    {
+        id: "rsql",
+        name: "RSQL",
+        lang: ["Rust"],
+        desc: "A lightweight, disk-backed relational database management system (RDBMS) built in Rust. Implements a persistent B-Tree storage engine, SQL parser, and interactive REPL from the ground up.",
+        data: `
+# RSQL: A SQLite Clone from Scratch in Rust
+
+**RSQL** is a lightweight, disk-backed relational database management system (RDBMS) built in Rust. This project implements a persistent B-Tree storage engine, SQL parser, and interactive REPL from the ground up.
+
+![Demo](https://img.shields.io/badge/Rust-1.70+-orange?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+
+## ✨ Features
+
+- 🗄️ **Database Management** - CREATE DATABASE and CONNECT for organized data storage
+- 🌳 **B-Tree Storage Engine** - Disk-backed with 4KB pages, automatic node splitting
+- 📝 **SQL Parser** - Supports CREATE, INSERT, SELECT, UPDATE, DELETE, DROP
+- 🔍 **WHERE Clauses** - Filter with =, !=, <, >, <=, >= and AND/OR
+- 🔗 **JOIN Support** - INNER JOIN for combining tables
+- 📇 **Secondary Indexes** - CREATE INDEX and CREATE UNIQUE INDEX for fast lookups
+- 💳 **Transactions** - BEGIN, COMMIT, ROLLBACK with deferred writes
+- 🎨 **Rich REPL** - Colored output, command history, tab completion
+- 💾 **Persistence** - Data survives restarts, stored in \`~/.rsql/databases/\`
+
+---
+
+## 🏗️ Architecture
+
+\`\`\`
+src/
+├── main.rs          # Interactive REPL with rustyline
+├── pager.rs         # 4KB page I/O management
+├── btree.rs         # B-Tree node operations (leaf + internal)
+├── table.rs         # Table & row handling, B-Tree traversal
+├── index.rs         # Secondary index management (B-Tree based)
+├── tokenizer.rs     # SQL lexer
+├── parser.rs        # SQL parser → AST
+├── executor.rs      # Query execution engine
+└── completer.rs     # Tab completion for SQL keywords
+\`\`\`
+
+| Component | Status |
+|-----------|--------|
+| Database Management | ✅ Done |
+| Pager (4KB pages) | ✅ Done |
+| B-Tree (leaf + internal nodes) | ✅ Done |
+| SQL Parser | ✅ Done |
+| Query Executor | ✅ Done |
+| WHERE clauses | ✅ Done |
+| JOIN support | ✅ Done |
+| Transactions | ✅ Done |
+| Secondary Indexes | ✅ Done |
+| Enhanced REPL | ✅ Done |
+
+---
+
+## 🚀 Quick Start
+
+\`\`\`bash
+# Build and run
+cargo run
+
+# Or build release
+cargo build --release
+./target/release/rsql
+\`\`\`
+
+---
+
+## 📖 SQL Commands
+
+### Database Management
+\`\`\`sql
+-- Create a new database
+CREATE DATABASE myapp
+
+-- Connect to a database (required before any table operations)
+CONNECT myapp
+\`\`\`
+
+### Create a Table
+\`\`\`sql
+CREATE TABLE users (id INTEGER, name TEXT, email TEXT)
+\`\`\`
+
+### Insert Data
+\`\`\`sql
+INSERT INTO users VALUES (1, 'Alice', 'alice@example.com')
+INSERT INTO users VALUES (2, 'Bob', 'bob@example.com')
+\`\`\`
+
+### Query Data
+\`\`\`sql
+SELECT * FROM users
+SELECT name, email FROM users WHERE id > 1
+SELECT * FROM users WHERE name = 'Alice' AND id < 10
+\`\`\`
+
+### Update Data
+\`\`\`sql
+UPDATE users SET email = 'new@email.com' WHERE id = 1
+\`\`\`
+
+### Delete Data
+\`\`\`sql
+DELETE FROM users WHERE id = 2
+\`\`\`
+
+### Drop Table
+\`\`\`sql
+DROP TABLE users
+\`\`\`
+
+### Indexes
+\`\`\`sql
+-- Create a secondary index for faster lookups
+CREATE INDEX idx_email ON users(email)
+
+-- Create a unique index (enforces uniqueness)
+CREATE UNIQUE INDEX idx_name ON users(name)
+
+-- Drop an index
+DROP INDEX idx_email
+\`\`\`
+
+### Transactions
+\`\`\`sql
+BEGIN
+INSERT INTO users VALUES (3, 'Charlie', 'charlie@example.com')
+-- Changes are not written to disk yet
+COMMIT  -- Or ROLLBACK to discard changes
+\`\`\`
+
+### Joins
+\`\`\`sql
+SELECT * FROM users JOIN orders ON users.id = orders.user_id
+\`\`\`
+
+---
+
+## 🔧 Meta Commands
+
+| Command | Description |
+|---------|-------------|
+| \`.help\` | Show help |
+| \`.databases\` | List all databases |
+| \`.tables\` | List all tables |
+| \`.indexes\` | List all indexes |
+| \`.schema\` | Show table schemas |
+| \`.exit\` | Exit (Ctrl+D also works) |
+
+---
+
+## ⌨️ REPL Features
+
+- **Dynamic Prompt** - Shows connected database: \`rsql[mydb]>\`
+- **↑↓** - Navigate command history
+- **Tab** - Autocomplete SQL keywords
+- **Ctrl+C** - Cancel current input
+- **Ctrl+D** - Exit
+
+History is saved to \`~/.rsql_history\`.
+
+---
+
+## 🧪 Technical Details
+
+- **Page Size:** 4096 bytes (SQLite-compatible)
+- **B-Tree:** Supports leaf node splitting and internal nodes
+- **Binary Search:** O(log n) lookups within pages
+- **Persistence:** Data stored in \`~/.rsql/databases/<db_name>/\`
+- **Serialization:** Raw pointer operations for zero-copy I/O
+- **Indexes:** Each secondary index uses its own B-Tree file (\`.idx\`)
+- **Metadata:** Table schemas stored in \`metadata.json\` per database
+
+### Directory Structure
+\`\`\`
+~/.rsql/
+└── databases/
+    ├── myapp/
+    │   ├── metadata.json     # Table schemas
+    │   ├── users.db          # Table data
+    │   └── users_idx_email.idx  # Index file
+    └── testdb/
+        └── ...
+\`\`\`
+
+---
+
+## 📈 Roadmap
+
+- [x] B-Tree with node splitting
+- [x] SQL Parser (CREATE, INSERT, SELECT, UPDATE, DROP)
+- [x] WHERE clause support
+- [x] Enhanced REPL with history
+- [x] DELETE statement
+- [x] JOIN support
+- [x] Transactions (BEGIN/COMMIT/ROLLBACK)
+- [x] Database management (CREATE DATABASE/CONNECT)
+- [x] Secondary indexes (CREATE INDEX/DROP INDEX)
+- [x] UNIQUE constraint enforcement
+- [ ] Variable-length records
+- [ ] Query optimizer
+- [ ] Multiple column indexes
+
+---
+
+## 🎯 Example Session
+
+\`\`\`
+$ cargo run
+
+╔═══════════════════════════════════════════════════════════╗
+║               RSQL - SQLite Clone in Rust                 ║
+╠═══════════════════════════════════════════════════════════╣
+║  Type SQL commands or .help for available commands        ║
+║  Use ↑↓ for history, Tab for completion                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+rsql> CREATE DATABASE myapp
+✓ Database 'myapp' created.
+
+rsql> CONNECT myapp
+✓ Connected to database 'myapp'.
+
+rsql[myapp]> CREATE TABLE users (id INTEGER, name TEXT, email TEXT)
+✓ Table 'users' created.
+
+rsql[myapp]> INSERT INTO users VALUES (1, 'Alice', 'alice@example.com')
+✓ 1 row(s) inserted.
+
+rsql[myapp]> CREATE UNIQUE INDEX idx_email ON users(email)
+✓ Index 'idx_email' created.
+
+rsql[myapp]> SELECT * FROM users
+┌────┬───────┬───────────────────┐
+│ id │ name  │       email       │
+├────┼───────┼───────────────────┤
+│ 1  │ Alice │ alice@example.com │
+└────┴───────┴───────────────────┘
+
+rsql[myapp]> .exit
+Goodbye!
+\`\`\`
+
+Build with ❤️ by Shabari.
+        `
+    },
+    {
+        id: "trace",
+        name: "Trace",
+        lang: ["Go"],
+        desc: "A developer tool that versions your local development environment at the project level. Stop 'environmental drift' by tracking project ports, local config, and dependencies.",
+        data: `
+# Trace: Project-Level State Versioning (Phase 1 Complete)
+
+**Trace** is a developer tool that versions your **local development environment** at the project level. It ensures that if a project "worked yesterday," you can return to that exact environment state today.
+
+Trace focuses on the **Project Boundary**: it ignores your system-wide clutter and tracks only the ports, variables, and configs that belong to *this* codebase.
+
+***
+
+## 🔍 The Goal: Stop "Environmental Drift"
+
+Code is versioned by Git. But the **environment** (the DB connection, the port, the \`.env\` file, the local dependencies) is usually invisible. Trace makes it visible.
+
+### The "Project-Level" Pillars:
+
+1. **Project Ports:** What ports is *this specific project* trying to use? (e.g., Is your Docker container or local Node server actually listening?)
+2. **Local Context:** Changes in \`.env\`, \`.env.local\`, or \`config/\` files within the project root.
+3. **Dependency State:** Tracking changes in \`node_modules\`, \`venv\`, or \`go.mod\` without committing them to Git.
+
+***
+
+## ✅ Phase 1: Config Tracking (Complete)
+
+- [x] **Project Root:** Uses current directory (\`.git\`/\`go.mod\` detection coming soon).
+- [x] **Config Scanner:** Parses \`.env\` keys (values never stored) + tracks any file content via \`.trace/config.json\`.
+- [x] **\`trace init\`:** Creates \`.trace/\` with \`config.json\` listing files to track (\`.env\` by default).
+- [x] **\`trace snap\`:** Captures env keys + file content hashes.
+- [x] **\`trace diff\`:** Compares snapshots (handles single snapshot as "all new").
+
+## 🛠 Phase 2: Process & Port Detection
+
+* [ ] Filter system processes running inside project directory.
+* [ ] Match processes to active ports.
+
+## 🛠 Phase 3: Full Snapshots & Watch Mode
+
+* [ ] \`trace snap "msg"\` with descriptive labels.
+* [ ] \`trace status\` for current drift.
+* [ ] \`trace watch\` for background monitoring.
+
+***
+
+## 🚀 Getting Started
+
+### Installation
+
+\`\`\`bash
+git clone https://github.com/Shabari-K-S/trace.git
+cd trace
+go build -o trace
+\`\`\`
+
+### Usage
+
+\`\`\`bash
+# Initialize in your project folder
+./trace init
+
+# Customize .trace/config.json to add files like:
+# "docker-compose.yml", "config/database.yml"
+
+# Capture current state
+./trace snap
+
+# Check for drift
+./trace diff
+\`\`\`
+
+**Example \`trace diff\` output:**
+\`\`\`
+🔍 Only one snapshot found. Showing everything as newly added...
+ + [ENV ADDED]   DATABASE_URL
+ + [FILE ADDED]    .env
+\`\`\`
+
+***
+
+### 🔄 Trace Lifecycle
+
+1. **\`./trace init\`**: Creates \`.trace/config.json\` defining tracked files.
+2. **\`./trace snap\`**: Records env keys + file content hashes.
+3. **\`./trace diff\`**: Compares snapshots, shows added/removed/modified env vars & files.
+4. **\`./trace watch\`** (coming soon): Background drift detection.
+
+***
+
+### 🎯 Key Use Cases
+
+- **"Morning After"**: \`trace diff\` shows what changed in \`.env\` or config files.
+- **"New Contributor"**: \`trace diff\` vs master snap to see missing setup.
+- **"Config Drift"**: Track changes in \`docker-compose.yml\` or local configs.
+
+***
+
+### 🛡 Privacy & Security
+
+- **Zero-Value Storage**: Only env **keys** and file **hashes** stored, never values or full content.
+- **Local Only**: Data stays in \`.trace/\` folder.
+- **Project Scoped**: Only tracks files listed in your config.
+
+***
+
+**Next**: Port detection and \`watch\` mode. Star/follow for updates! 🚀
+        `
+    },
+    {
+        id: "ryt-downloader",
+        name: "RYT-Downloader",
+        lang: ["Rust", "Tauri", "React", "TypeScript"],
+        desc: "A high-performance, desktop YouTube video downloader and manager built with Tauri v2. Native performance, real-time progress tracking, and a organized library.",
+        data: `
+# RYT-Downloader (Rust YouTube Downloader)
+
+![Tauri](https://img.shields.io/badge/built%20with-Tauri-24C8DB.svg) ![Rust](https://img.shields.io/badge/backend-Rust-orange.svg)
+
+**RYT-Downloader** is a high-performance, desktop YouTube video downloader and manager built with [Tauri v2](https://v2.tauri.app/). It combines a lightweight React frontend with a powerful Rust backend to provide real-time download tracking, a persistent library, and a modern dark UI.
+
+## 🚀 Features
+
+* **⚡ Native Performance:** Powered by Rust and \`yt-dlp\` for maximum download speeds.
+* **📊 Real-time Progress:** Live progress bars, download speed, and ETA tracking.
+* **📂 Organized Library:** Automatically saves files to \`~/Downloads/RYT-Downloads\` and tracks history in a local SQLite database.
+* **🎨 Modern UI:** Sleek, dark-mode interface with glassmorphism effects and Lucide icons.
+* **🛠️ Smart Recovery:** Retry failed downloads with a single click and robust error handling.
+* **🔒 Privacy Focused:** Runs entirely locally on your machine. No tracking or external servers.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React, TypeScript, Vite, CSS Modules
+* **Backend:** Rust, Tauri v2 (Shell, SQL, Opener plugins)
+* **Database:** SQLite
+* **Engine:** [yt-dlp](https://github.com/yt-dlp/yt-dlp) (bundled as a sidecar)
+
+---
+
+## ⚙️ Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+1.  **Node.js & npm** (v16+)
+2.  **Rust & Cargo** ([Install Guide](https://www.rust-lang.org/tools/install))
+3.  **FFmpeg** (Required by \`yt-dlp\` for merging video/audio)
+    * *Linux (Arch):* \`sudo pacman -S ffmpeg\`
+    * *Windows/Mac:* Download and add to system PATH.
+4.  **Python** (Required runtime for \`yt-dlp\`)
+
+---
+
+## 📥 Installation & Setup
+
+### 1. Clone the Repository
+
+\`\`\`bash
+git clone https://github.com/Shabari-K-S/ryt-downloader.git
+cd ryt-downloader
+\`\`\`
+
+### 2. Install Dependencies
+
+\`\`\`bash
+npm install
+# OR
+pnpm install
+\`\`\`
+
+---
+
+## 🖥️ Development
+
+To start the app in development mode with hot-reloading:
+
+\`\`\`bash
+npm run tauri dev
+
+\`\`\`
+
+* The frontend runs on \`localhost:1420\`.
+* Rust compiles incrementally.
+
+---
+
+## 📦 Building for Production
+
+To create an optimized executable installer for your machine:
+
+\`\`\`bash
+npm run tauri build
+
+\`\`\`
+
+The output (AppImage, .deb, .msi, or .dmg) will be located in:
+\`src-tauri/target/release/bundle/\`
+        `
+    },
     {
         id: "jsw-ohc-python",
         name: "JSW-OHC",
         lang: ["Python", "Streamlit"],
-        desc: "The JSW-OHC Team Project is an initiative aimed at streamlining and optimizing the Occupational Health Center (OHC) management system for JSW (Jindal Steel Works). This project focuses on developing a digital solution to enhance medical record-keeping, employee health tracking, and operational efficiency within the OHC framework.",
+        hideSource: true,
+        desc: "The JSW-OHC Team Project is an initiative aimed at slimming and organizing the Occupational Health Center (OHC) management system for JSW (Jindal Steel Works). This project focuses on developing a digital solution to enhance medical record-keeping, employee health tracking, and operational efficiency within the OHC framework.",
         data: `
 
 > This is a **private project** built for **JSW Occupational Health Center** 🚑.  
@@ -66,11 +754,11 @@ export const Project_List = [
 
 
         `
-    },        
+    },
     {
         id: "webstrom-python",
-        name:"WebStorm",
-        lang:["Python"],
+        name: "WebStorm",
+        lang: ["Python"],
         desc: "WebStorm is a lightweight, flexible web framework built using Python. It serves as a customizable HTTP server with easy-to-use features for building web applications. With its streamlined design, WebStorm enables developers to quickly set up a web server and integrate dynamic content, making it an ideal solution for small to medium-sized projects. The framework is available on GitHub for open-source collaboration, and its modular structure allows developers to extend and enhance its functionalities",
         data: `
 - 🌐 Easy-to-use HTTP server
@@ -82,10 +770,10 @@ export const Project_List = [
     },
     {
         id: "web-scraper-api",
-        name:"Web Scrapper API",
+        name: "Web Scrapper API",
         lang: ["Python", "fastapi"],
-        desc:"This API takes a URL as input and returns the web page’s title, a clean summary, the full extracted text, and all image URLs. It fetches the page, parses the HTML, extracts readable content, and generates a concise summary—all in one simple POST request. Perfect for building content readers, research tools, or AI-powered summarizers",
-        data:`
+        desc: "This API takes a URL as input and returns the web page’s title, a clean summary, the full extracted text, and all image URLs. It fetches the page, parses the HTML, extracts readable content, and generates a concise summary—all in one simple POST request. Perfect for building content readers, research tools, or AI-powered summarizers",
+        data: `
 
 ## 📖 Overview
 
