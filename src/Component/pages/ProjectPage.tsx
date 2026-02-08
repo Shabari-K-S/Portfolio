@@ -13,6 +13,8 @@ const ProjectPage = () => {
   const [lang, setLang] = useState([""]);
   const [desc, setDesc] = useState("");
   const [data, setData] = useState("");
+  const [year, setYear] = useState("");
+  const [context, setContext] = useState("");
 
   const [liveLink, setLiveLink] = useState("");
 
@@ -33,6 +35,8 @@ const ProjectPage = () => {
 
         setHideSource(project.hideSource || false);
         setGithub(project.github || "");
+        setYear(project.year || "");
+        setContext(project.context || "");
       }
     })
   }, [params.id])
@@ -60,7 +64,7 @@ const ProjectPage = () => {
             <div className="flex lg:hidden items-center gap-4 text-sm text-gray-500 mb-4">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>2024</span>
+                <span>{year}</span>
               </div>
               <div className="w-1 h-1 rounded-full bg-gray-700"></div>
               <div className="text-xs">
@@ -119,10 +123,10 @@ const ProjectPage = () => {
                 <p className="mb-2 font-medium text-gray-400">Project Info</p>
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="w-4 h-4" />
-                  <span>2024</span>
+                  <span>{year}</span>
                 </div>
                 <div className="text-xs leading-relaxed">
-                  This project showcases modern web development practices and clean architecture.
+                  {context}
                 </div>
               </div>
             </div>

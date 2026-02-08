@@ -7,6 +7,8 @@ export type ProjectCardProps = {
     liveLink?: string;
     hideSource?: boolean;
     github?: string;
+    year: string;
+    context: string;
 }
 
 export type ProjectPageProps = {
@@ -17,11 +19,233 @@ export type ProjectPageProps = {
     liveLink?: string;
     hideSource?: boolean;
     github?: string;
+    year: string;
+    context: string;
 }
 
 export const Project_List = [
     {
+        id: "food-truth",
+        year: "2026",
+        context: "A production-grade mobile app demonstrating Expo, React Native, and sophisticated API integration.",
+        name: "FoodTruth",
+        lang: ["TypeScript", "React Native", "Expo", "NativeWind"],
+        github: "https://github.com/Shabari-K-S/FoodTruth",
+        desc: "A privacy-focused food scanning application revealing Nutri-Score, NOVA groups, and additives.",
+        data: `
+# FoodTruth 🍎
+
+
+
+**FoodTruth** is a modern, privacy-focused food scanning application that empowers users to make healthier choices instantly. By simply scanning a barcode, it reveals the hidden truth about what you eat—from Nutri-Scores to processing levels.
+
+## 🌟 Product Highlights
+
+### 🔍 Instant Analysis
+Powered by **Expo Camera** and the **Open Food Facts API**, FoodTruth identifies products in milliseconds, delivering:
+- **Nutri-Score**: A colorful A-E grade for nutritional quality.
+- **NOVA Groups**: Reveals if your food is natural or ultra-processed.
+- **Eco-Score**: Understand the environmental footprint of your purchase.
+
+### 🎨 Pure Clarity Design
+We built a design system focused on one thing: **Readability**.
+- **Visual Grading**: Color-coded cards (Emerald for healthy, Red for limit) make data instant to read.
+- **Clean Typography**: Uses **Outfit** and **Lexend** for a modern, approachable feel.
+- **Dark Mode**: Fully supported system-wide dark mode for comfortable night usage.
+
+### 🔒 Privacy First
+Your health data is yours. FoodTruth stores your scan history **locally** on your device using \`AsyncStorage\` and \`Expo Secure Store\`. No accounts, no tracking, no cloud uploads.
+
+## 🛠️ Engineering Stack
+
+- **Mobile Framework**: React Native (Expo SDK 50+)
+- **Styling**: NativeWind (Tailwind CSS for Native)
+- **State**: TanStack Query v5 (for robust offline-first data fetching)
+- **Architecture**: File-based routing with Expo Router
+        `
+    },
+    {
+        id: "contact-vault",
+        year: "2026",
+        context: "A local-first application showcasing privacy-focused architecture and offline data synchronization.",
+        name: "ContactVault",
+        lang: ["TypeScript", "React", "SQLite", "Express"],
+        github: "https://github.com/Shabari-K-S/ContactVault",
+        desc: "A privacy-first, offline-capable contact manager with rich profile support.",
+        data: `
+# ContactVault 🔐
+
+
+
+**ContactVault** is a "Personal Memory Vault" for your relationships. In an age of cloud sync and data mining, ContactVault offers a secure, offline-first alternative for managing your personal network.
+
+## 🌟 Why ContactVault?
+
+### 🛡️ Local-First & Private
+Built on **SQLite**, your data lives as a single file on your machine. No cloud servers, no third-party access. You own your social graph completely.
+
+### 🧠 Structured Memory
+Go beyond just names and numbers.
+- **Rich Profiles**: Store education history, social links, and important dates.
+- **Custom Metadata**: Flexible JSON fields for tracking niche details (e.g., "Coffee preference", "Meeting notes").
+- **Smart Organization**: Color-coded Groups and searchable Tags help you slice your network instantly.
+
+### ⚡ Power User Features
+- **Bulk Actions**: Select 50 contacts and tag them as "Conference 2025" in one click.
+- **Fuzzy Search**: Find "Jon" even if you typed "Jhn".
+- **Keyboard First**: comprehensive keyboard shortcuts for rapid navigation.
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19, Tailwind CSS, Framer Motion
+- **Backend API**: Express.js
+- **Database**: Prisma ORM with SQLite
+- **Design**: Minimalist, content-focused UI with light/dark themes.
+        `
+    },
+    {
+        id: "ara-shell",
+        year: "2026",
+        context: "A systems programming project demonstrating Rust's safety, performance, and low-level process management.",
+        name: "Ara Shell",
+        lang: ["Rust"],
+        github: "https://github.com/Shabari-K-S/ara-shell",
+        desc: "A modern, POSIX-compliant shell with syntax highlighting and smart history.",
+        data: `
+# Ara Shell 🐚
+
+
+
+**Ara** (Aura) is a modern shell written in **Rust** that challenges the status quo of \`bash\` and \`zsh\`. It combines the raw speed of a compiled language with the user-friendly features of modern interactive shells.
+
+## 🚀 Performance & Safety
+
+Built with **Rust 2021 Edition**, Ara prioritizes memory safety without garbage collection.
+- **Custom Parser**: A hand-written recursive descent parser ensures precise command understanding and helpful error messages.
+- **Zero-Cost Abstractions**: Leveraging Rust's ownership model for efficient string handling and process management.
+
+## ✨ Interactive Experience
+
+The terminal shouldn't be a black box. Ara provides:
+- **Syntax Highlighting**: Real-time coloring of commands (Green), operators (Cyan), and errors (Red) *as you type*.
+- **Smart History**: Persisted, searchable history that remembers your context.
+- **Intuitive Editing**: Full line-editing capabilities powered by \`rustyline\`.
+
+## 🛠️ Implementation Details
+
+- **Process Management**: Direct \`fork\` and \`exec\` syscall handling via \`nix\` and \`libc\`.
+- **POSIX Compliance**: Aiming for standard compliance while adding modern conveniences.
+- **Pipeline Orchestration**: efficient handling of infinite pipe chains (\`cmd1 | cmd2 | cmd3\`).
+        `
+    },
+    {
+        id: "ether-webos",
+        year: "2026",
+        context: "A complex UI simulation pushing the boundaries of browser capabilities with a full desktop environment.",
+        name: "Ether WebOS",
+        lang: ["TypeScript", "React", "Vite", "Tailwind CSS"],
+        github: "https://github.com/Shabari-K-S/Ether-WebOS",
+        desc: "A highly interactive, web-based operating system simulator built with React.",
+        data: `
+# Ether WebOS 🖥️
+
+
+
+**Ether WebOS** is a comprehensive operating system simulator running entirely in your browser. It pushes the boundaries of what's possible with modern web technologies, replicating a full desktop environment.
+
+## 🌟 The Web Desktop Experience
+
+### 🪟 Window Management System
+A fully functional window manager implemented in React state:
+- **Drag & Drop**: Smooth, 60fps window movement.
+- **Resizing**: Pixel-perfect window resizing from any edge.
+- **Z-Index Layering**: Active windows automatically rise to the top.
+
+### 📂 Virtual File System
+Simulates a hierarchical file system in memory:
+- **CRUD Operations**: Create folders, edit text files, and delete items.
+- **Persisted State**: Your "hard drive" saves to LocalStorage, so your files are there when you return.
+
+### 📦 App Ecosystem
+Includes a suite of functional apps:
+- **VS Code Simulator**: A Monaco Editor instance for writing code within the OS.
+- **Terminal**: A working command-line interface.
+- **Pixel Paint**: A retro art creation tool.
+- **Browser**: A secure sandboxed browser-within-a-browser.
+
+## 🛠️ Tech Stack
+
+- **Core**: React, TypeScript, Vite
+- **Styling**: Tailwind CSS for rapid UI development
+- **State**: Complex React Context/Reducer patterns for system-wide state management.
+        `
+    },
+    {
+        id: "rui-lib",
+        year: "2026",
+        context: "A modern component library emphasizing physics-based animations and advanced glassmorphism techniques.",
+        name: "RUI Lib",
+        lang: ["React 19", "Tailwind CSS v4", "Framer Motion"],
+        github: "https://github.com/Shabari-K-S/rui-lib",
+        desc: "A next-generation React component library built with magnetic physics and glassmorphism 2.0.",
+        data: `
+# RUI
+
+
+
+**RUI** is a next-generation React component library built with **magnetic physics**, **glassmorphism 2.0**, and deep interactivity. It's designed to make your applications feel alive.
+
+Built with **React 19**, **Tailwind CSS v4**, and **Framer Motion**.
+
+## ✨ Features
+
+- **🧲 Magnetic Physics**: Interactions that feel naturally fluid using spring-based animations.
+- **💎 Glassmorphism 2.0**: Next-level blur effects, frosted glass materials, and beautiful gradients.
+- **🚀 Teleport Search**: Command palette (Cmd+K) navigation built-in.
+- **📱 Responsive**: Works seamlessly across desktop and mobile.
+- **🌗 Dark Mode**: First-class support for light and dark themes.
+
+## 📦 Components
+
+RUI comes with a suite of premium components:
+
+- **Interactive Dock**: macOS-style dock with magnification effects.
+- **Glass Card**: Beautiful, frosted glass containers with tilt effects.
+- **Smart Breadcrumb**: Adaptive navigation paths with dropdown support.
+- **Teleport Search**: Global search and command palette.
+- **Navbar**: Responsive navigation with glass effects.
+- **Code Block**: Syntax-highlighted code viewer with copy functionality.
+
+## 🛠️ Usage Example
+
+Here's how to use the \`GlassCard\` component:
+
+\`\`\`tsx
+import { GlassCard } from './components/GlassCard';
+
+function App() {
+  return (
+    <GlassCard className="p-8">
+      <h1>Hello RUI</h1>
+      <p>This is a glassmorphic card.</p>
+    </GlassCard>
+  );
+}
+\`\`\`
+
+## 🎨 Customizable
+
+Built on top of **Tailwind CSS**, every component accepts a \`className\` prop for easy overrides using standard utility classes.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+        `
+    },
+    {
         id: "codeflow",
+        year: "2026",
+        context: "A developer tool for visualizing code execution flow, bridging the gap between static code and runtime behavior.",
         name: "CodeFlow",
         lang: ["TypeScript", "React", "Vite"],
         liveLink: "https://codeflow-app.vercel.app",
@@ -143,6 +367,8 @@ Contributions are welcome! If you'd like to improve the parser, add new language
     },
     {
         id: "terminon",
+        year: "2026",
+        context: "A GPU-accelerated terminal emulator built with Rust and React, focusing on performance and modern UI aesthetics.",
         name: "Terminon",
         lang: ["Rust", "Tauri", "React", "TypeScript"],
         github: "https://github.com/Shabari-K-S/terminon",
@@ -260,6 +486,8 @@ Made by **[Shabari K S](https://github.com/Shabari-K-S)** 🚀
     },
     {
         id: "rsql",
+        year: "2026",
+        context: "A lightweight, disk-backed relational database built from scratch in Rust, featuring a custom B-Tree engine.",
         name: "RSQL",
         lang: ["Rust"],
         github: "https://github.com/Shabari-K-S/rsql",
@@ -509,6 +737,8 @@ Build with ❤️ by Shabari.
     },
     {
         id: "trace",
+        year: "2025",
+        context: "A developer tool for versioning local development environments to prevent environmental drift.",
         name: "Trace",
         lang: ["Go"],
         github: "https://github.com/Shabari-K-S/trace",
@@ -620,6 +850,8 @@ go build -o trace
     },
     {
         id: "ryt-downloader",
+        year: "2025",
+        context: "A high-performance desktop YouTube downloader built with Tauri and Rust for native speed.",
         name: "RYT-Downloader",
         lang: ["Rust", "Tauri", "React", "TypeScript"],
         github: "https://github.com/Shabari-K-S/ryt-downloader",
@@ -712,6 +944,8 @@ The output (AppImage, .deb, .msi, or .dmg) will be located in:
     },
     {
         id: "jsw-ohc-python",
+        year: "2025",
+        context: "A digital health management solution optimizing operations for occupational health centers.",
         name: "JSW-OHC",
         lang: ["Python", "Streamlit"],
         hideSource: true,
@@ -765,6 +999,8 @@ The output (AppImage, .deb, .msi, or .dmg) will be located in:
     },
     {
         id: "webstrom-python",
+        year: "2025",
+        context: "A lightweight, flexible web framework for building customizable HTTP servers in Python.",
         name: "WebStorm",
         lang: ["Python"],
         github: "https://github.com/Shabari-K-S/webstrom-python",
@@ -779,6 +1015,8 @@ The output (AppImage, .deb, .msi, or .dmg) will be located in:
     },
     {
         id: "web-scraper-api",
+        year: "2025",
+        context: "A powerful REST API for extracting structured content and metadata from public webpages.",
         name: "Web Scrapper API",
         lang: ["Python", "fastapi"],
         github: "https://github.com/Shabari-K-S/web-scraper-api",
@@ -835,6 +1073,8 @@ This API is deployed on RapidAPI for easy access. You can integrate it into any 
     },
     {
         id: "geo-insight-api",
+        year: "2025",
+        context: "An IP geolocation service providing detailed network intelligence and location data.",
         name: "Geo Insight API",
         lang: ["Python", "fastapi"],
         desc: "Geo Insight API is a powerful tool for developers to access geographical data and insights. It provides endpoints for retrieving information about countries, cities, and regions, including population statistics, area sizes, and more. The API is designed to be fast, reliable, and easy to integrate into various applications.",
@@ -936,6 +1176,8 @@ If data is unavailable, \`"Unknown"\` or \`0\` is returned instead — making it
     },
     {
         id: "qr-pulse",
+        year: "2025",
+        context: "A high-performance API for generating and scanning QR codes in real-time.",
         name: "QR Pulse",
         lang: ["Python", "fastapi"],
         desc: "QR Pulse is a high-performance QR code generator and scanner API designed for developers who need fast, reliable, and flexible QR code solutions. With support for generating QR codes in PNG and Base64 formats, and powerful QR scanning from image URLs, base64 strings, or file uploads, QR Pulse is ideal for integrating into event ticketing systems, restaurant menus, digital business cards, payment platforms, and logistics tools. This lightweight REST API ensures seamless QR code creation and decoding in real time, making it perfect for websites, mobile apps, and automation workflows.",
@@ -993,6 +1235,8 @@ Form:
     },
     {
         id: "secure-password-api",
+        year: "2025",
+        context: "A security-focused API for generating cryptographically secure tokens and passwords.",
         name: "Secure Password Generator API",
         lang: ["Python", "FastAPI"],
         desc: "Generate cryptographically secure passwords, API keys, and random tokens with full customization. Built for developers needing high-entropy values for login systems, authentication flows, or secure storage.",
@@ -1047,6 +1291,8 @@ Output:
     },
     {
         id: "random-fake-data-api",
+        year: "2025",
+        context: "A utility API for generating realistic mock data for testing and prototyping.",
         name: "Random Fake Data Generator",
         lang: ["Python", "FastAPI"],
         desc: "Generate realistic fake data for testing and prototyping. Quickly produce emails, names, UUIDs, IPs, numbers, dates, and more — ideal for automation, dummy data, and mock APIs.",
@@ -1096,6 +1342,8 @@ Output:
     },
     {
         id: "universal-hash-api",
+        year: "2025",
+        context: "A cryptographic tool for generating secure hashes using various algorithms.",
         name: "Universal Hash Generator API",
         lang: ["Python", "FastAPI"],
         desc: "A flexible API that generates cryptographic hash values from input text using multiple algorithms like MD5, SHA, BLAKE2, and SHAKE. Supports fixed and extendable output.",
@@ -1145,6 +1393,8 @@ Output:
     },
     {
         id: "password-strength-api",
+        year: "2025",
+        context: "A security tool for evaluating password strength and providing improvement suggestions.",
         name: "Password Strength Checker API",
         lang: ["Python", "FastAPI"],
         desc: "Evaluate how secure a password is using real-time heuristics and optional breach checks. Provides instant feedback with recommendations to strengthen weak passwords.",
