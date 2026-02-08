@@ -10,7 +10,7 @@ const ProjectList = ({ count }: { count?: number }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mt-10 mb-10">
                 {
                     data.map((project, index) => (
-                        <ProjectCard key={index} name={project.name} lang={project.lang} desc={project.desc} id={project.id} />
+                        <ProjectCard key={index} name={project.name} lang={project.lang} desc={project.desc} id={project.id} year={project.year} context={project.context} />
                     ))
                 }
             </div>
